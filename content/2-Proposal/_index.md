@@ -33,7 +33,7 @@ By processing facial recognition directly on the ESP32-CAM, this system guarante
 ### 3. Solution Architecture
 Below is the system architecture highlighting local edge processing on the ESP32-CAM AI-Thinker board paired with AWS cloud management:
 
-![Project Diagram](/diagram.png)
+![Project Diagram](image/diagram.png)
 
 ### AWS Services Used
 - **AWS IoT Core**: Receives encrypted MQTT messages containing access attempts, timestamps, user IDs, and optional snapshot images.
