@@ -1,5 +1,5 @@
-baseURL = "https://main.dyfdzf9vw9wy.amplifyapp.com/"
-relativeURLs = false
+baseURL = "/"
+relativeURLs = true
 canonifyURLs = false
 defaultContentLanguage = "en"
 
