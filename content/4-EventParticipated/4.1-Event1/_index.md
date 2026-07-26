@@ -6,121 +6,123 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
-
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: “Cloud Architecture, AI Innovation, and Infrastructure Operations”
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Explore real-time cloud backends for game engines.
+- Introduce GraphRAG architectures for multi-hop data retrieval.
+- Provide a career roadmap from IT helpdesk to DevOps.
+- Demonstrate machine learning for network intrusion detection
+- Detail container mechanics and Dockerfile optimization.
+- Outline frameworks for effective technical teamwork.
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Nguyen Quoc Bao** – Cloud & Game Backend Developer
+- **Viet Phat** – AI Major, Swinburne University of Technology
+- **Tran Trung Vinh** – System Administrator, Central Retail Group
+- **Le Hoang Gia Dai** – AWS G3 Team, HUTECH University
+- **Bao Huynh** – Junior Cloud Native Developer, Endava Vietnam
+- **Truong Huy Phuoc** – Team Collaboration Specialist
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### Multiplayer Architectures in the Cloud
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+- **Stateful Routing:** Uses AWS API Gateway WebSockets and route keys for real-time JSON traffic.  
+- **Serverless Backend:** Nodes.js 20 Lambda handles payloads; DynamoDB tracks player connection IDs.  
+- **Protocol Choice:** UDP for low-latency physics; WebSockets for session states; HTTP for profiles.  
+- **Client Integration:** Implemented via Godot 4 WebSocketPeer and processed inside the native _process loop.  
 
-#### Transitioning to modern application architecture – Microservices
+#### Advanced GraphRAG Architectures
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+- **Graph Indexing:** Replaces basic text vector matching with structural relationship models for multi-hop lookups. 
+- **Managed Pathway:** Uses Amazon Bedrock Knowledge Bases for embedding generation and Neptune Analytics for indexing. 
+- **Custom Pathway:** Employs LlamaIndex for text-to-graph building and Amazon Neptune for Cypher queries.    
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### Sysadmin & DevOps Career Blueprint
 
-#### Domain-Driven Design (DDD)
+- **Mindset Shift:** Moves from reactive desktop troubleshooting to proactive infrastructure automation and system auditing.  
+- **Production Safety:** Enforces a strict rule never to test changes directly in live production environments. 
+- **Growth Roadmap:** Steps through networking (CCNA), Linux (RHCSA), cloud scaling, IaC (Terraform), and automated CI/CD. 
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+#### Machine Learning-Based NIDS
 
-#### Event-Driven Architecture
+- **Anomaly Detection:** Complements static firewall signatures with ML models to detect Zero-Day vectors.  
+- **Data Engineering:** Validates models using CSE-CIC-IDS2018 dataset, data pruning, and a LightGBM Confusion Matrix.  
+- **Cloud Remediation:** Streams logs from WAF/ALB via Kinesis Firehose to S3, triggering alerts via GuardDuty and SNS. 
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+#### Containerization Mechanics with Docker
 
-#### Compute Evolution
+- **OS Virtualization:** Containers share the host kernel, making them lighter and faster than full Virtual Machines.
+- **Layer Optimization:** Every line in a Dockerfile creates an immutable, reusable build layer.
+- **Cache Invalidation:** Changing an instruction invalidates the cache for that step and all subsequent layers.
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+#### Frameworks for Effective Teamwork
 
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- **4 Core Rules:**
+  * Establish clear goals
+  * Match tasks to individual skills
+  * Open communication
+  * Ensure personal accountability
+- **Digital Tools:** 
+  * Uses Trello and ClickUp for tracking
+  * Slack and Discord for continuous developer communication  
 
 ### Key Takeaways
 
 #### Design Mindset
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+- **Domain-First:** Architecture must be driven by business requirements, not technology trends.
+- **Protocol Strategy:** Align communication tools (Sockets, HTTP, streams) with structural payload requirements.
+- **Risk Mitigation:** Build isolated staging tiers and monitoring loops to protect production availability.
 
 #### Technical Architecture
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+- **Serverless Patterns:** Leverage event-driven compute (Lambda) and managed databases (DynamoDB) to reduce overhead.
+- **Efficient Builds:** Structure Dockerfiles strategically to maximize layer caching and minimize image weight.  
+- **Relational Context:** Enhance traditional text vector search by mapping data linkages with Graph databases.
 
 #### Modernization Strategy
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- **Skill Layering:** Move systematically from operating system fundamentals into automated IaC and container delivery.
+- **Task Alignment:** Use agile frameworks to map individual engineering tickets directly to team milestones.
 
 ### Applying to Work
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+- **Deploy WebSockets:** Test serverless AWS WebSocket architectures for apps needing low-latency, real-time data.  
+- **Test Graph RAG:** Pilot LlamaIndex and Amazon Neptune to manage highly relational context queries.  
+- **Adopt IaC:** Replace manual system configuration by version-controlling environments with Terraform.  
+- **Optimize Dockerfiles:** Reorder Dockerfile instructions to leverage caching and shrink container sizes.  
+- **Implement ML NIDS:** Stream network logs into ML pipelines to identify hidden behavioral anomalies.  
+- **Organize Workspaces:** Standardize team project tracking and sprints using ClickUp or Trello boards. 
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Event 1 delivered highly practical insights covering cloud networks, advanced AI, behavioral security, and engineering workflows.
 
 #### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+- Industry experts presented actionable, production-proven architectural strategies for cloud and container scaling.
+- Presenters shared clear professional roadmaps for transitioning into high-impact DevOps and Sysadmin roles.
 
 #### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+- Analyzed the mechanics of setting up real-time serverless sockets, functions, and stateful databases.
+- Studied data preprocessing, ML model matrix validation, and automated cloud incident reporting pipelines.
+- Explored container layers and runtime caching to see exactly how commands affect build efficiency.
 
 #### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+- Compared managed vs. custom AI pipelines using graph indexing for advanced context searches. 
+- Reviewed project tracking software configurations designed to keep agile teams aligned.
 
 #### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+- The sessions highlighted that continuous documentation and shared vocabulary bridge the gap between business and dev teams.  
 
 #### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+- Scalability requires matching protocols to the use case and decoupling services with serverless parts.
+- System reliability relies on shifting from manual fixes to automated IaC, layer optimization, and proactive ML monitoring.
 
 #### Some event photos
 *Add your event photos here*  
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+>Overall, Event 1 provided a strong combination of technical architectures, optimization patterns, and actionable career strategies for modern cloud environments.

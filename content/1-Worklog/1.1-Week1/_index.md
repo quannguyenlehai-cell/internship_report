@@ -5,53 +5,43 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 1 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Define the core concept, scope, and operational flow of the Facial Recognition Door system.
+* Research existing open-source projects and industry examples to understand hardware and software requirements.
+* Compare local edge processing versus cloud-based facial recognition to finalize the technical stack.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Brainstorm project concept and core features (e.g., live video feed, automated unlocking mechanism, user management system)                                                                                                   | 06/01/2026 | 06/01/2026      |
+| 3   | - Research existing facial recognition door projects <br> - Review open-source examples using ESP32, ESP32-CAM, and SERVO SG90                                           | 06/02/2026 | 06/02/2026      | <https://maker.pro/arduino/projects/> <br> <https://www.meegle.com/en_us/topics/face-recognition/> |
+| 4   | - Analyze and compare face recognition frameworks: <br>&emsp; + Local frameworks (OpenCV, Dlib, Face_Recognition Python library) <br>&emsp; + Cloud APIs (AWS Rekognition, Azure Face API) | 06/03/2026 | 06/03/2026      | <https://aws.amazon.com/rekognition/> <br> <https://opencv.org/> |
+| 5   | - Finalize Hardware Choices: Select the specific microcontrollers (ESP32-CAM + ESP32) and servo (SG90) <br> - Draft a theoretical circuit schematic detailing the power distribution (external 5V) and common ground                           | 06/04/2026 | 06/04/2026      | Component pinout diagrams |
+| 6   | - **Environment Preparation:** <br>&emsp; + Install Arduino IDE and configure the ESP32 Board Manager <br>&emsp; + Download necessary libraries (ESP32Servo, camera drivers) <br>&emsp; + Analyze official sample code structures (CameraWebServer)                                                                                  | 06/05/2026 | 06/05/2026      | <https://docs.espressif.com/> |
 
 
 ### Week 1 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Understood the core operational workflow of the Facial Recognition Door system: 
+  * Image Capture via ESP32-CAM
+  * On-board Face Verification (Edge AI processing)
+  * Signal Transfer to ESP32
+  * Servo SG90 Latch Rotation for door actuation
 
-* Successfully created and configured an AWS Free Tier account.
+* Completed a comparative analysis between cloud APIs (AWS Rekognition) and local edge frameworks to choose an entirely offline, low-latency processing model.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Finalized the technical Bill of Materials (BOM) without physical procurement, preparing the list of specific components needed.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Drafted a comprehensive theoretical circuit diagram to address hardware power constraints, including:
+  * ESP32-CAM pinout configuration
+  * Separate external 5V power supply line for the servo
+  * Common ground linkage to avoid signal noise
 
-* Used AWS CLI to perform basic operations such as:
+* Installed and prepared the software development environment on the computer, including:
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+  * Arduino IDE application setup
+  * Espressif ESP32 Board Manager installation
+  * Pre-loading the ESP32Servo library
+  * Downloading required camera driver dependencies

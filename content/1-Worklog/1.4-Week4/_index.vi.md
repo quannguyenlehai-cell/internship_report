@@ -5,55 +5,34 @@ weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 4:
 
-### Mục tiêu tuần 4:
+* Bắt đầu phác thảo bố cục cấu trúc trên các tệp ứng dụng bằng các thuộc tính CSS tùy chỉnh, đơn giản.
+* Xây dựng các biểu mẫu HTML cơ bản cho việc nhập liệu thử nghiệm quản trị (login.html, register_admin.html) mà không cần kiểm soát truy cập.
+* Lập thiết kế sơ bộ cho lưới theo dõi người dùng và khung phát video cơ bản, lên kế hoạch cho các điều chỉnh bố cục mở rộng.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần này:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2 | - Phác thảo khung bố cục ứng dụng bằng các biến CSS sơ bộ <br> - Soạn thảo các biểu mẫu HTML cơ bản cho login.html và register_admin.html | 06/22/2026 | 06/22/2026 | Tài liệu tham khảo Biến CSS |
+| 3 | - Liên kết các đường dẫn điều hướng cơ bản, không hạn chế trên các trang mẫu thử cục bộ để kiểm tra định tuyến người dùng | 06/23/2026 | 06/23/2026 | Hướng dẫn về Liên kết HTML |
+| 4 | - Xây dựng bảng bố cục cơ sở bên trong dashboard.html <br> - Lập trình một đoạn mã đơn giản để thêm các chuỗi văn bản thô vào thanh điều hướng nhằm kiểm tra tên người dùng | 06/24/2026 | 06/24/2026 | Thao tác DOM với JavaScript |
+| 5-6 | - **Phác thảo khung giao diện (Wireframing):** <br>&emsp; + Xây dựng các khung chứa phần tử video trống cho enroll.html <br>&emsp; + Xây dựng ranh giới bố cục cho giao diện thiết bị đầu cuối khóa công khai index.html | 06/25/2026 | 06/26/2026 | Hướng dẫn Phần tử Media trên MDN |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Kết quả đạt được trong Tuần 4:
 
+* Khởi tạo cấu trúc bố cục nền tảng:
+  * Cấu hình các biến hệ thống toàn cục cơ bản cho định dạng nền, viền và thẻ (card).
+  * Thiết kế các thành phần bảng cơ bản nhằm hiển thị các mục dữ liệu thô trong các mốc phát triển sau.
+  * Tạo các trường bố cục biểu mẫu linh hoạt cho phép nhập dữ liệu văn bản tự do mà không cần xác thực phức tạp tại chỗ.
 
-### Kết quả đạt được tuần 4:
+* Triển khai quy trình điều hướng cơ sở:
+  * Thiết lập các luồng truy cập mở tạm thời giữa các giao diện hệ thống, cho phép điều hướng ngay lập tức mà không bị chặn xác thực.
+  * Ánh xạ các trình xử lý văn bản tạm thời để đọc dữ liệu chuỗi thô nhằm hiển thị tên người dùng thử nghiệm cơ bản trực tiếp trên thanh điều hướng của ứng dụng.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Phác thảo các khung xem camera cốt lõi:
+  * Đặt các thành phần video HTML5 tiêu chuẩn làm vị trí chờ (placeholder) cho các luồng truyền trực tiếp sắp tới.
+  * Gặp phải các lỗi ban đầu về căn chỉnh và kích thước khung chứa khi bố trí các trường truyền thông trên trang web linh hoạt (responsive).
 
 

@@ -5,55 +5,36 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+### Mục tiêu Tuần 8:
 
+* **Quản lý Backend & Cơ sở dữ liệu:** Giải quyết các sự cố tích hợp backend giữa Lambda cơ sở dữ liệu web và bộ xử lý MQTT IoT Core; sửa các lỗi đăng ký người dùng trong bảng cơ sở dữ liệu hợp nhất để phân biệt các yêu cầu dành cho quản trị viên (admin) và khách (guest).
+* **Độ tương thích Giao diện người dùng (Frontend Responsiveness):** Tối ưu hóa bố cục giao diện (UI) cho các màn hình kích thước nhỏ nhằm khắc phục sự cố co giãn thanh điều hướng (navbar) và nén văn bản trong bảng.
+* **Chuyển đổi sang Lưu trữ Đám mây (Cloud Hosting Migration):** Chuyển đổi giao diện người dùng tĩnh (static client interface) từ môi trường cục bộ sang kiến trúc truy cập Internet sử dụng AWS Amplify.
+* **Tích hợp API Full-Stack:** Thiết lập giao tiếp bảo mật, độc lập (decoupled) giữa tầng frontend được lưu trữ trên mây và backend serverless thông qua REST API Gateway.
 
-### Mục tiêu tuần 8:
+### Các nhiệm vụ thực hiện trong tuần này:
+| Ngày | Mô tả Nhiệm vụ | Ngày Bắt đầu | Ngày Hoàn thành | Tài liệu Tham khảo |
+| :---: | :--- | :---: | :---: | :--- |
+| **2** | **Chuyển đổi Backend Kép & Triển khai Đám mây:**<br>• Thử nghiệm hợp nhất Lambda web/cơ sở dữ liệu với bộ xử lý MQTT IoT cục bộ; chuyển hướng sang tách biệt MQTT trên kiến trúc đám mây riêng.<br>• Tái cấu trúc các tài nguyên tĩnh frontend cũ và thực hiện triển khai đám mây qua AWS Amplify. | 07/20/2026 | 07/27/2026 | Tài liệu AWS IoT Core / AWS Amplify |
+| **3** | **Tích hợp API Gateway REST:**<br>• Thiết lập logic giao diện rõ ràng giữa frontend và backend bằng các endpoint REST của AWS API Gateway nhằm bảo mật giao tiếp backend độc lập. | 07/21/2026 | 07/28/2026 | Hướng dẫn Lập trình viên AWS API Gateway |
+| **4** | **Xử lý Proxy Tự do (Greedy Proxy) & Điều hướng Tuyến:**<br>• Cấu hình các phương thức tích hợp `POST` chuẩn và triển khai định tuyến proxy tự do (`{proxy+}`) để điều phối yêu cầu động đến AWS Lambda. | 07/22/2026 | 07/29/2026 | Tài liệu Proxy AWS API Gateway |
+| **5** | **Vá lỗi Danh mục Người dùng & Chẩn đoán Mạng:**<br>• Chỉnh sửa logic định tuyến đăng ký để kích hoạt các yêu cầu mật khẩu theo điều kiện dựa trên vai trò bảo mật.<br>• Chẩn đoán, truy vết và khắc phục các bất thường về mạng, tham số thời gian chờ (timeout) và các nghẽn giao tiếp trên toàn bộ hệ thống. | 07/23/2026 | 07/30/2026 | Câu lệnh Điều kiện Python / Tài liệu CloudWatch |
+| **6** | **Tối ưu hóa Giao diện Di động & Bảo mật CORS:**<br>• Sửa lỗi nén bố cục gây thu nhỏ thanh điều hướng; thêm khung chứa cuộn ngang (`overflow-x: auto`) cho các bảng danh mục người dùng.<br>• Cấu trúc các tiêu đề/tải trọng yêu cầu (payload/header) hợp nhất và áp dụng quy tắc Chia sẻ Tài nguyên Khác Nguồn (CORS). | 07/24/2026 | 07/31/2026 | Thiết kế Web MDN / Tiêu chuẩn W3C CORS |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Thành tựu Tuần 8:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* **Cô lập Backend & An toàn Mã nguồn:** Triển khai module MQTT lên một thể hiện (instance) đám mây riêng biệt sau khi các nỗ lực hợp nhất giao tiếp cục bộ thất bại. Duy trì hàm `handle_remote_override` chưa sử dụng trong khối mã hoạt động như một biện pháp an toàn chống đứt gãy đường ống tích hợp (pipeline).
+* **Sửa lỗi Danh mục Người dùng:** Giải quyết lỗi xác thực khiến hành khách thông thường không thể đăng ký do các yêu cầu mật khẩu toàn cục trong bảng cơ sở dữ liệu hợp nhất. Tái cấu trúc (refactor) logic để chỉ áp dụng các quy tắc mật khẩu nghiêm ngặt dành riêng cho vai trò quản trị viên.
 
+* **Co giãn Thanh điều hướng (Navbar Scaling):** Sửa lại phép tính bố cục để ngăn thanh điều hướng bị nén quá mức trên màn hình di động.
+* **Kiểm soát Tràn hiển thị (Overflow Controls):** Áp dụng `overflow-x: auto` riêng cho khung chứa bảng Danh mục Người dùng Hợp lệ, cung cấp thanh cuộn ngang cho dữ liệu rộng trong khi vẫn giữ nguyên tính ổn định của trang.
 
-### Kết quả đạt được tuần 8:
+* **Chuyển đổi sang Amplify:** Tách rời giao diện người dùng khỏi môi trường cục bộ, triển khai ứng dụng lên các tầng sản xuất (production) thông qua AWS Amplify để đạt khả năng sẵn sàng cao và truy cập toàn cầu.
+* **Tính Ổn định của Bản dựng (Build Stability):** Cấu hình các tham số triển khai cơ sở, đảm bảo tải đúng các tuyến tài nguyên, liên kết tệp tĩnh và kịch bản (script) trên miền công cộng.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* **Kiến trúc Proxy Tự do (Greedy Proxy Architecture):** Khởi tạo tích hợp proxy AWS API Gateway (định tuyến `{proxy+}`), cho phép tất cả yêu cầu từ client đến một endpoint hợp nhất và điều hướng vào tầng tính toán AWS Lambda.
+* **Tầng Truyền tải Dữ liệu (Data Transport Layer):** Triển khai các phương thức gửi `POST` bảo mật, cho phép truyền tải tin cậy các thông tin xác thực truy cập, tải trọng dữ liệu hình ảnh và các lệnh quản trị.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+* **Xử lý Sự cố CORS:** Vô hiệu hóa các rào cản bảo mật trình duyệt bằng cách thiết lập các quy tắc Chia sẻ Tài nguyên Khác Nguồn (CORS) trên API Gateway, xác thực cả các tùy chọn preflight và khớp tiêu đề tên miền cụ thể.
+* **Đồng bộ hóa Đường ống Tích hợp (Pipeline Synchronization):** Chuẩn hóa schema yêu cầu từ frontend và tham số phản hồi từ backend nhằm loại bỏ các sai lệch tích hợp và duy trì các vòng giao tiếp API có độ trễ thấp.
 

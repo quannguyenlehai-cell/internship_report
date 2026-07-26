@@ -5,53 +5,33 @@ weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 4 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Begin drafting the structural layout across the application files using straightforward, custom CSS properties.
+* Construct basic HTML forms for administrative testing inputs (login.html, register_admin.html) without access controls.
+* Blueprint the user tracking grid and basic video streaming shells, planning for extended layout adjustments.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| 2 | - Outline application layout framework using preliminary CSS variables <br> - Draft basic HTML forms for login.html and register_admin.html | 06/22/2026 | 06/22/2026 | CSS Variables Reference |
+| 3 | - Wire basic, restriction-free navigation links across local prototype pages to test user routing | 06/23/2026 | 06/23/2026 | HTML Links Guide |
+| 4 | - Construct the baseline layout table inside dashboard.html <br> - Code a simple script to append raw input strings onto the navigation bar for username testing | 06/24/2026 | 06/24/2026 | JavaScript DOM Manipulation |
+| 5-6 | - **Interface Wireframing:** <br>&emsp; + Build empty video element container frames for enroll.html <br>&emsp; + Frame out layout boundaries for the public lock terminal view index.html | 06/25/2026 | 06/26/2026 | MDN Media Element Guide |
 
 ### Week 4 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Initialized Foundation Layout Structures:
+  * Configured basic global system variables for background, border, and card formatting.
+  * Designed elementary table components meant to display raw data entries in later milestones.
+  * Created flexible form layout fields that accept text inputs freely without complex local validation.
 
-* Successfully created and configured an AWS Free Tier account.
+* Deployed Baseline Navigation Routine:
+  * Set up temporary open-access loops across the system views, allowing immediate navigation without credential blocks.
+  * Mapped temporary text handlers that read raw string inputs to display basic test usernames directly on the application navbar.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Drafted Core Camera View Frames:
+  * Placed standard HTML5 video components down as placeholders for oncoming live web feeds.
+  * Encountered initial alignment and container-sizing bugs when laying out media fields over responsive web pages.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...

@@ -6,120 +6,108 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo Tổng kết: "AWS Community Meetup: Cloud Journeys, Data Engineering, and DevOps Realities"
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Mục tiêu Sự kiện
 
-### Mục Đích Của Sự Kiện
+- Cung cấp cho sinh viên và kỹ sư mới ra trường một lộ trình phát triển rõ ràng trong hệ sinh thái đám mây AWS.
+- Chia sẻ những góc nhìn thực tế, chuyên sâu về công việc hàng ngày của Kỹ sư Phân tích Dữ liệu (Data Analytics Engineer) và Kỹ sư DevOps (DevOps Engineer).
+- Giới thiệu các năng lực kỹ thuật AI nâng cao, đặc biệt là xây dựng voice agent có khả năng mở rộng bằng Amazon Bedrock.
+- Làm rõ quy trình tuyển dụng và văn hóa kỹ thuật tại các tập đoàn đa quốc gia (MNC).
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Diễn giả
 
-### Danh Sách Diễn Giả
+- **Danh Hoàng Hiếu Nghị** – AI Engineer, AWS Community Builder, & AWS Student Builder Group Leader
+- **Đạt Phạm** – Data Analytics Engineer (với kinh nghiệm tại Kamereo & Colgate-Palmolive)
+- **Cường Nguyễn** – Process Engineer
+- **Trương H. Trọng** – DevOps Engineer @ Endava Vietnam
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+---
 
-### Nội Dung Nổi Bật
+## Nội dung Nổi bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### 1. Từ Hành trình Cloud AI Đầu tiên đến Đối tác AWS (Danh Hoàng Hiếu Nghị)
+*   **Lộ trình Phát triển 8 Bước dành cho Sinh viên**: Định hướng từ sự tò mò ban đầu đến khi trở thành chuyên gia trong ngành:
+    1. *Tò mò Sinh viên (Student Curiosity)*: Bắt đầu với tư duy khám phá, tìm tòi.
+    2. *Hành trình Đám mây Đầu tiên (First Cloud Journey)*: Tìm kiếm môi trường học tập phù hợp.
+    3. *Hội thảo & Cộng đồng (Workshop & Community)*: Tích cực học hỏi từ bạn bè và người hướng dẫn (mentor).
+    4. *Thực hành Labs (Hands-on Labs)*: Rèn luyện kỹ năng qua việc thực thi thực tế.
+    5. *Dự án Trường học (School Projects)*: Áp dụng kiến thức vào các bài tập lớn/đồ án học thuật.
+    6. *Hồ sơ Năng lực (Portfolio)*: Ghi nhận và trình bày các năng lực đã được kiểm chứng.
+    7. *Đối tác AWS (AWS Partner)*: Giải quyết các bài toán kinh doanh thực tế trong hệ sinh thái ngành.
+    8. *Chia sẻ Lại (Share Back)*: Hướng dẫn và hỗ trợ thế hệ các nhà phát triển (builders) tiếp theo cùng tăng trưởng.
+*   **Cộng đồng AWS & Hệ sinh thái Đối tác**: Cái nhìn sâu sắc về các chương trình như AWS Student Builder Group (tiền thân là AWS Cloud Clubs), Chương trình AWS Community Builder, và việc đạt được các cột mốc quan trọng cùng các đơn vị hàng đầu như Renova Cloud (được vinh danh là AWS Partner of the Year - Vietnam 2026).
+*   **Tiêu điểm Kỹ thuật**: Phiên đi sâu chuyên môn về **"Xây dựng Voice Agents ở Quy mô lớn với Amazon Bedrock AI"** (đồng trình bày bởi Kiệt Trần, Nghi Danh và Thọ Nguyễn), tập trung vào chuyển đổi âm thanh thời gian thực thành các runtime agent chuẩn sản xuất (production) vững chắc.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+### 2. Kỹ thuật Phân tích Dữ liệu & Văn hóa Tập đoàn (Đạt Phạm & Cường Nguyễn)
+*   **Thực tế Công việc Data Analytics Engineering qua các Ngành**:
+    *   *Kamereo (Thương mại điện tử/Vận hành)*: Xây dựng các báo cáo hiệu suất vận hành hàng ngày, hàng tuần và hàng tháng; thiết kế dashboard theo dõi xu hướng để cảnh báo bất thường; thực hiện phân tích nguyên nhân gốc rễ (root-cause analysis) hỗ trợ ban lãnh đạo đưa ra quyết định nhanh chóng.
+    *   *Colgate-Palmolive (FMCG)*: Xử lý dữ liệu máy móc công nghiệp và thiết bị IoT trong nhà máy sản xuất nhằm xác định cơ hội tối ưu hóa chi phí và hỗ trợ các sáng kiến chuyển đổi số.
+*   **Kỹ năng Kỹ thuật & Hành vi Cốt lõi**:
+    *   *Tư duy Phản biện (Critical Thinking)*: Phân tích dữ liệu một cách khách quan để đưa ra góc nhìn kinh doanh có thể hành động (actionable insights), thay vì chỉ xuất các chỉ số thô.
+    *   *Kể chuyện qua Dữ liệu (Data Storytelling)*: Chuyển đổi các ma trận dữ liệu trừu tượng thành câu chuyện thúc đẩy hành động của lãnh đạo (ví dụ: theo dõi Hiệu suất Vận hành, Chi phí Giao hàng chặng cuối/Hoàn tất đơn hàng, và chỉ số Cung ứng Fill Rate).
+    *   *Giao tiếp & Giải quyết Vấn đề (Communication & Problem Solving)*: Phối hợp hiệu quả với các đội ngũ liên chức năng để giải quyết các điểm nghẽn trong sản xuất.
+*   **Mô hình Tư duy Phát triển Sự nghiệp**:
+    *   *Người thực thi (Follower)*: Junior/Intern làm theo các danh mục kiểm tra (checklist) nghiêm ngặt và xây dựng kỹ năng nền tảng dưới sự hướng dẫn trực tiếp.
+    *   *Người chủ động học hỏi (Learner)*: Hiểu được các giải pháp nhưng vẫn cần định hướng từ mentor khi đặt ra các câu hỏi kỹ thuật chuyên sâu.
+    *   *Người giải quyết vấn đề (Problem Solver)*: Chủ động bóc tách các bài toán kinh doanh, thiết kế mô hình dữ liệu và chịu trách nhiệm về kết quả bàn giao.
+    *   *Người tư duy hệ thống (System Thinker)*: Đánh giá bức tranh toàn cảnh, xem xét tác động liên phòng ban và giảm thiểu rủi ro vận hành trên toàn hệ thống.
+    *   *Ngôi sao / Lãnh đạo (Super Star)*: Định hình chiến lược dữ liệu và hướng dẫn thế hệ tư duy hệ thống tiếp theo.
+*   **Giải mã Quy trình Tuyển dụng & Văn hóa MNC**:
+    *   *Phễu tuyển dụng chuẩn*: Sàng lọc/Sơ vấn (Quét ATS + Cuộc gọi HR tiếng Anh 30 phút) → Bài kiểm tra Năng lực (Chỉ số Logic/Kỹ thuật/Tình huống) → Phỏng vấn Kỹ thuật (Phương pháp STAR) → Vòng Phù hợp Văn hóa (Cultural Fit) với lãnh đạo cấp cao.
+    *   *Văn hóa Tập đoàn*: Đón nhận văn hóa **"Không đổ lỗi khi gặp sự cố" (No-Blame Post-Mortem)** trong ngành Tech (khắc phục nguyên nhân gốc rễ hệ thống thay vì phạt cá nhân) và tiếp cận **"Quan tâm & Hòa nhập" (Caring & Inclusive)** trong ngành FMCG (tập trung vào sự đa dạng và phúc lợi của đội ngũ nhân sự).
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+### 3. Công việc Thực sự của một Kỹ sư DevOps (Trương H. Trọng)
+*   **Giải mã các Định kiến về DevOps**: DevOps không chỉ đơn thuần là viết pipeline CI/CD, làm một "người xử lý Docker/Kubernetes", hay ngồi làm việc biệt lập để deploy code và sửa lỗi production lúc nửa đêm.
+*   **Lộ trình Học tập Nền tảng**:
+    *   *Nền tảng Hệ thống*: Đi sâu vào bản chất Linux, kiến thức mạng cơ bản (networking), quy trình làm việc với Git và các ngôn ngữ lập trình (Python/Golang).
+    *   *Môi trường Chạy Ứng dụng (Application Runtime)*: Nắm vững cách ứng dụng thực thi, xây dựng môi trường, thao tác với biến môi trường và quản lý log hệ thống trước khi trừu tượng hóa sang công nghệ container.
+    *   *Thực hành Theo Dự án*: Xây dựng, triển khai, giám sát, chủ động làm gián đoạn và sửa chữa các kiến trúc quy mô nhỏ.
+*   **Bài học Đắt giá & Phẩm chất Kỹ thuật Quan trọng**:
+    *   Sao chép các đoạn mã cấu hình/lệnh một cách mù quáng không đồng nghĩa với việc hiểu biết về mặt kỹ thuật.
+    *   Luôn xác định đúng người chịu trách nhiệm chính của vấn đề kiến trúc và phân tích *tại sao* một framework lại được áp dụng trước khi tập trung vào *cách* viết nó.
+    *   DevOps là một văn hóa tổ chức nhằm giúp việc bàn giao hệ thống trở nên minh bạch và dễ dàng cho toàn bộ bộ phận kỹ thuật, chứ không phải là hành động giải cứu anh hùng của một cá nhân.
+    *   Công cụ luôn thay đổi liên tục; các nguyên lý khoa học máy tính cốt lõi mới là thứ bền vững. Hãy tận dụng các công cụ AI để gia tăng hiệu suất mà không làm mất đi trực giác kỹ thuật.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+---
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+## Bài học Cốt lõi
 
-#### Domain-Driven Design (DDD)
+### Tư duy Thiết kế & Vận hành
+- **Ưu tiên Kinh doanh (Business-First)**: Kiến trúc dữ liệu và cấu hình hạ tầng phải thích ứng với các rào cản miền kinh doanh (business domain), không phải chạy theo các chỉ số công nghệ hình thức.
+- **Tư duy Hệ thống**: Chuyển từ việc thực thi các tác vụ riêng lẻ sang đánh giá xem một thay đổi nhỏ trong cơ sở dữ liệu hay pipeline sẽ ảnh hưởng thế nào đến quy trình làm việc của nhiều phòng ban.
+- **Thất bại Không đổ lỗi**: Áp dụng quy trình post-mortem không đổ lỗi để thúc đẩy sự minh bạch và xây dựng các hệ thống production có tính chống chịu cao (resilient).
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+### Kiến trúc Kỹ thuật
+- **Hạ tầng Quan trọng hơn Công cụ**: Ưu tiên các nguyên lý cốt lõi (Linux, mạng, scripting tiêu chuẩn) hơn là theo đuổi mù quáng các công cụ điều phối container hay cloud wrapper đang thịnh hành.
+- **Tính Hành động của Dữ liệu**: Chuyển định hướng phân tích từ lưu trữ dữ liệu quá khứ sang phát hiện bất thường linh hoạt và theo dõi chi phí vận hành.
+- **AI là Đòn bẩy Tăng trưởng**: Sử dụng các công cụ như Amazon Bedrock hoặc trợ lý lập trình để tăng tốc quy mô, trong khi vẫn nắm quyền chủ động về logic cốt lõi và thiết kế hệ thống.
 
-#### Event-Driven Architecture
+---
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+## Áp dụng vào Thực tế
 
-#### Compute Evolution
+- **Định vị Giai đoạn Phát triển Bản thân**: Đánh giá năng lực kỹ thuật hiện tại so với khung *Người thực thi - Người học hỏi - Người giải quyết vấn đề* để lên kế hoạch nâng cao kỹ năng.
+- **Áp dụng Mô hình Không đổ lỗi**: Đề xuất và áp dụng mô hình post-mortem không đổ lỗi vào các bài tập lớn ở trường đại học hoặc lỗi dự án nhóm để tối ưu hóa quá trình sửa lỗi tập thể.
+- **Thực hành Kỹ thuật DevOps**: Tránh dán lệnh shell một cách mù quáng; dành thời gian để truy vết các biến runtime của ứng dụng, log và các gói tin mạng khi triển khai ứng dụng local.
+- **Thử nghiệm với GenAI Agents**: Xây dựng thử một mô hình voice hoặc text agent sử dụng các mô hình nền tảng của Amazon Bedrock để tự động hóa các quy trình giao tiếp lặp đi lặp lại.
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+---
 
-#### Amazon Q Developer
+## Trải nghiệm Sự kiện
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+Tham dự AWS Community Meetup lần này mang lại cái nhìn toàn diện về quá trình chuyển đổi thành công từ một sinh viên phát triển dự án trở thành một chuyên gia công nghệ tại tập đoàn đa quốc gia.
 
-### Những Gì Học Được
+#### Kết hợp giữa Chiến lược và Thực thi Thực tế
+Sự kiện đã cân bằng giữa các mô hình chiến lược tổng quan (như lộ trình 8 bước hành trình đám mây và sự phát triển công nghệ qua từng thời kỳ) với môi trường kỹ thuật thực tế, bao gồm vận hành chuỗi cung ứng tại Kamereo hay mạng lưới IoT nhà máy tại Colgate-Palmolive.
 
-#### Tư Duy Thiết Kế
+#### Bức tranh Kỹ thuật Thực tế
+Các diễn giả không "hồng hóa" các vai trò công nghệ. Phần chia sẻ về DevOps đã làm rõ những thách thức về phụ thuộc giữa các team và việc theo dõi runtime, trong khi phần Data nhấn mạnh rằng kỹ thuật dữ liệu xoay quanh việc giải quyết các bài toán kinh doanh thực tế chứ không chỉ đơn thuần là vẽ các biểu đồ đẹp mắt.
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+#### Tương tác Cộng đồng Sôi nổi
+Sự kiện đã kết nối sinh viên với các AWS Community Builders và kỹ sư cấp cao, khuyến khích thảo luận cởi mở trong phiên Q&A về khung tuyển dụng, ranh giới ứng dụng AI và các tiêu chuẩn kỹ thuật đang phát triển trong cảnh quan đám mây tại Việt Nam.
 
-#### Kiến Trúc Kỹ Thuật
+#### Một số hình ảnh tại sự kiện
+*Thêm hình ảnh sự kiện của bạn vào đây*
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+> Sự kiện meetup này đã thu hẹp hiệu quả khoảng cách giữa lý thuyết học thuật và vận hành doanh nghiệp thực tế, mang lại định hướng rõ ràng và khả thi về cách xây dựng sự nghiệp kỹ thuật hiện đại.

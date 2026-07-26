@@ -5,27 +5,29 @@ weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+WHAT HAVE I LEARNED AFTER EXPERIENCING AWS IOT CORE?
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+Lately, I've had time to delve deeper into researching and applying AWS IoT Core to hardware and embedded systems (IoT) projects. I have to admit that since switching from traditional MQTT brokers to AWS IoT Core, my approach to IoT system development has changed significantly! 
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+Here are some perspectives and lessons learned from the implementation process:
 
-Key points to know:
+1. MQTT Protocol & Ultra-Low Latency 
+Working with microcontrollers like the ESP32, hardware resources and network bandwidth are always major obstacles. AWS IoT Core supports the MQTT protocol, which is extremely optimized for low-power devices, allowing for almost instantaneous telemetry payload sending and actuator control commands (such as servos and relays) without consuming excessive resources.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+2. Security is no longer a nightmare (X.509 Certificates & IAM Policy) 
+Previously, personal IoT projects were often concerned about security, but AWS has standardized this very well. Each device (thing) requires:
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+A unique X.509 Cryptographic Certificate.
 
-...Image...
+Amazon Root CA.
 
-...Link...
+Fine-grained IAM Policies to precisely limit which devices are allowed to publish or subscribe to which topics.
 
-...Guide...
+Thanks to mTLS (Mutual TLS), I am completely confident in the system's closedness and security.
+
+3. Excellent Serverless Ecosystem Synchronization 
+The true power of AWS IoT Core lies in its seamless connectivity with other Serverless services:
+
+IoT Rules Engine: Directly sends data to AWS Lambda for backend logic processing without needing a 24/7 server.
+
+Database & Frontend Integration: Easily integrate with AWS RDS (MySQL) to store user information and push interfaces to AWS Amplify.

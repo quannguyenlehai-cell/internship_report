@@ -5,54 +5,32 @@ weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+### Mục tiêu Tuần 6
+* **Tối ưu hóa cơ sở hạ tầng đám mây (Cloud Infrastructure Optimization):** Hoàn thành tích hợp AWS IoT Core để cho phép điều khiển từ xa ESP32 qua giao thức MQTT an toàn và thiết lập đồng bộ hóa cơ sở dữ liệu người dùng.
+* **Triển khai kiến trúc Serverless (Serverless Architecture Deployment):** Cấu hình môi trường thực thi (runtime), các đường ống định tuyến API (gateway routing pipelines) và logic nghiệp vụ cốt lõi (core business logic) trong AWS Lambda.
 
+### Các công việc thực hiện trong tuần
 
-### Mục tiêu tuần 6:
+| Ngày | Mô tả công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| :--- | :--- | :---: | :---: | :--- |
+| 2 | Sửa lỗi (debug) và ổn định kết nối backend Node.js cục bộ với MQTT broker của AWS IoT Core. | 06/07/2026 | 06/07/2026 | [Backend Server Script](https://github.com/quannguyenlehai-cell/intership/blob/main/server/index.mjs) |
+| 3 | Khởi tạo môi trường cơ sở dữ liệu MySQL và triển khai logic truy cập dữ liệu cốt lõi bên trong các hàm AWS Lambda. | 07/07/2026 | 07/07/2026 | Nguồn nội bộ |
+| 4 | Cấu hình định tuyến (routing), các giai đoạn triển khai (deployment stages) và tích hợp trình kích hoạt (trigger) cho AWS Lambda thông qua AWS API Gateway. | 08/07/2026 | 08/07/2026 | Nguồn nội bộ |
+| 5 | Khắc phục sự cố và xử lý các ngoại lệ về mạng full-stack, định tuyến và kiểm soát truy cập giữa tầng frontend và backend. | 09/07/2026 | 09/07/2026 | Nguồn nội bộ |
+| 6 | Cấu trúc các yêu cầu/phản hồi phương thức HTTP và cấu hình chính sách Chia sẻ tài nguyên giữa các nguồn gốc (CORS) để frontend truy cập an toàn. | 10/07/2026 | 10/07/2026 | Nguồn nội bộ |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+---
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Kết quả đạt được trong Tuần 6
 
+#### 1. Logic Serverless & Tích hợp Cơ sở dữ liệu
+* **Cấu hình tầng cơ sở dữ liệu (Database Layer Configuration):** Khởi tạo hạ tầng dữ liệu quan hệ MySQL và thiết lập quy trình quản lý kết nối (connection pooling) an toàn trong tầng serverless.
+* **Triển khai AWS Lambda (AWS Lambda Implementation):** Triển khai thành công logic nghiệp vụ backend lên các hàm AWS Lambda, cho phép truy vấn cơ sở dữ liệu qua mã lập trình và thực hiện các quy trình đồng bộ hóa tự động với AWS IoT Core.
+* **Kết nối Broker (Broker Connectivity):** Khắc phục các lỗi trong môi trường Node.js cục bộ nhằm đảm bảo khả năng phát lệnh đáng tin cậy, độ trễ thấp từ tầng backend trực tiếp đến phần cứng thông qua giao thức MQTT.
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+#### 2. Quản lý API & Bảo mật Full-Stack
+* **Định tuyến API Gateway (API Gateway Routing):** Xây dựng điểm truy cập RESTful có cấu trúc bằng AWS API Gateway, ánh xạ thành công các điểm cuối (endpoints) từ client đến các trình xử lý AWS Lambda tương ứng ở backend.
+* **Cấu hình CORS & Vòng đời (CORS & Lifecycle Configuration):** Thiết lập các quy tắc Chia sẻ tài nguyên giữa các nguồn gốc (CORS) chặt chẽ trên toàn bộ tài nguyên API Gateway, xác thực các tiêu đề yêu cầu (request headers) từ frontend đến backend và xử lý kiểm tra sơ bộ (preflight).
+* **Tối ưu hóa kết nối mạng (Network Modernization):** Chẩn đoán và xử lý thành công các nút thắt mạng giữa các tầng, chuẩn hóa cấu trúc yêu cầu mô hình ở frontend và định dạng phản hồi ở backend nhằm đảm bảo luồng dữ liệu đo đạc từ xa (telemetry flow) ổn định từ đầu đến cuối (end-to-end).
 
 

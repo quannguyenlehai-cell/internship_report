@@ -6,14 +6,28 @@ chapter : false
 pre : " <b> 5.1. </b> "
 ---
 
-#### Giới thiệu về VPC Endpoint
+### Lý do nên chọn dịch vụ AWS
 
-+ Điểm cuối VPC (endpoint) là thiết bị ảo. Chúng là các thành phần VPC có thể mở rộng theo chiều ngang, dự phòng và có tính sẵn sàng cao. Chúng cho phép giao tiếp giữa tài nguyên điện toán của bạn và dịch vụ AWS mà không gây ra rủi ro về tính sẵn sàng.
-+ Tài nguyên điện toán đang chạy trong VPC có thể truy cập Amazon S3 bằng cách sử dụng điểm cuối Gateway. Interface Endpoint  PrivateLink có thể được sử dụng bởi tài nguyên chạy trong VPC hoặc tại TTDL.
+#### AWS Amplify (Máy chủ Frontend)
 
-#### Tổng quan về workshop
-Trong workshop này, bạn sẽ sử dụng hai VPC.
-+ **"VPC Cloud"** dành cho các tài nguyên cloud như Gateway endpoint và EC2 instance để kiểm tra.
-+ **"VPC On-Prem"** mô phỏng môi trường truyền thống như nhà máy hoặc trung tâm dữ liệu của công ty. Một EC2 Instance chạy phần mềm StrongSwan VPN đã được triển khai trong "VPC On-prem" và được cấu hình tự động để thiết lập đường hầm VPN Site-to-Site với AWS Transit Gateway. VPN này mô phỏng kết nối từ một vị trí tại TTDL (on-prem) với AWS cloud. Để giảm thiểu chi phí, chỉ một phiên bản VPN được cung cấp để hỗ trợ workshop này. Khi lập kế hoạch kết nối VPN cho production workloads của bạn, AWS khuyên bạn nên sử dụng nhiều thiết bị VPN để có tính sẵn sàng cao.
+- CI/CD tự động: Kết nối trực tiếp với kho lưu trữ Git để tự động xây dựng và triển khai bảng điều khiển web mỗi khi mã được cập nhật.
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+- Phân phối toàn cầu: Phục vụ giao diện người dùng thông qua Mạng phân phối nội dung (CDN) toàn cầu của Amazon CloudFront, cung cấp quyền truy cập web độ trễ thấp cho các điều khiển quản trị và đăng ký người dùng.
+
+- SSL được quản lý: Tự động xử lý chứng chỉ HTTPS để truy cập web an toàn mà không cần quản lý máy chủ web phức tạp.
+
+#### AWS API Gateway (Quản lý API)
+
+Kiến trúc tách rời: Hoạt động như một điểm truy cập an toàn, được quản lý để định tuyến lưu lượng HTTP một cách gọn gàng giữa giao diện người dùng và các chức năng điện toán phi máy chủ ở phía máy chủ.
+
+Proxy tham lam & Xử lý CORS: Đơn giản hóa việc thiết lập điểm cuối thông qua định tuyến proxy linh hoạt ({proxy+}) và cung cấp quản lý CORS preflight gốc để bảo vệ các yêu cầu trình duyệt khác nguồn gốc.
+
+Bảo mật & Giới hạn tích hợp: Bảo vệ các dịch vụ phụ trợ khỏi các đột biến lưu lượng truy cập hoặc các cuộc tấn công từ chối dịch vụ (DoS).
+
+#### AWS Lambda (Điện toán phi máy chủ)
+
+- Hướng sự kiện & Tiết kiệm chi phí: Chỉ thực thi logic nghiệp vụ và xác minh khi được kích hoạt bởi các cuộc gọi API đến, loại bỏ chi phí và gánh nặng bảo trì của việc vận hành các máy chủ chuyên dụng 24/7.
+
+- Tích hợp SDK liền mạch: Kết nối trực tiếp với AWS RDS để truy vấn cơ sở dữ liệu và AWS IoT Data Plane SDK để xuất bản các lệnh phần cứng theo thời gian thực.
+
+- Khả năng mở rộng: Xử lý các đột biến về yêu cầu truy cập một cách dễ dàng bằng cách tự động mở rộng dung lượng điện toán theo yêu cầu.

@@ -5,53 +5,32 @@ weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 9 Objectives
+* **Hardware & Edge Verification:** Conduct end-to-end ESP32 integration testing via remote MQTT frames and benchmark real-time edge face-recognition accuracy.
+* **Full-Stack & Telemetry Validation:** Test web interface door override controls and audit the user enrollment flow down to the MySQL persistence layer.
+* **Comprehensive Progress Reporting:** Synthesize historical project milestones into structured reports covering Weeks 1 through 12 and attended technical events.
+* **Final Project Deliverables & Wrap-Up:** Finalize the project proposal, publish 3 technical blog posts, conduct a technical workshop, complete self-assessments, and hold feedback sessions.
 
-### Week 9 Objectives:
+### Tasks Executed This Week
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+| Day | Task Description | Start Date | Completion Date | Reference Material |
+| :--- | :--- | :---: | :---: | :--- |
+| 2 | - Conduct integration testing on ESP32 hardware via remote AWS IoT Core MQTT command sequences.<br>- Compile project progress report covering Weeks 1 to 3.<br>- Finalize and complete overall project Proposal. | 27/07/2026 | 27/07/2026 | |
+| 3 | - Benchmark edge face-recognition pipeline to verify reliable door-latch activation.<br>- Compile project progress report covering Weeks 4 to 6.<br>- Write and publish 3 technical Blog posts. | 28/07/2026 | 28/07/2026 | |
+| 4 | - Run telemetry tests to execute remote lock/unlock operations from web application.<br>- Compile project progress report covering Weeks 7 to 9.<br>- Prepare content and host technical Workshop session. | 29/07/2026 | 29/07/2026 | |
+| 5 | - Validate user enrollment pipeline and auditing data persistence down to MySQL layer.<br>- Compile project progress report covering Weeks 10 to 12.<br>- Complete final Self-Assessment evaluation documentation. | 30/07/2026 | 30/07/2026 | |
+| 6 | - Execute UAT on admin features (manual overrides, credential rotation, session states).<br>- Prepare summary report for 3 attended technical events.<br>- Conduct Knowledge Sharing session and gather supervisor/team Feedback. | 31/07/2026 | 31/07/2026 | |
+---
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Week 9 Achievements
 
+* **Edge & Vision Integration:** Successfully verified ESP32 microcontroller actuation via AWS IoT Core with zero dropped MQTT packets, while validating high-accuracy real-time face-recognition latch triggers.
+* **UI Controls & Data Persistence:** Achieved full-stack telemetry validation for remote lock/unlock overrides via the web UI and verified data persistence integrity across the MySQL layer.
+* **Administrative Controls:** Completed UAT on administrative manual overrides, credential rotation loops, and session handling fail-safes.
 
-### Week 9 Achievements:
+* **Historical Progress Audit:** Completed four progress reports systematically documenting project milestones from Week 1 through Week 12.
+* **Core Deliverables:** Published 3 technical blog posts summarizing project takeaways and finalized the overall project proposal.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **Event & Workshop Dissemination:** Documented key takeaways from 3 technical events and hosted a technical workshop session.
+* **Self-Assessment & Review:** Completed full self-assessment evaluation documentation and gathered actionable feedback during the team and supervisor knowledge sharing session.

@@ -5,55 +5,44 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
+### Mục tiêu Tuần 1:
+
+* Xác định khái niệm cốt lõi, phạm vi và luồng vận hành của hệ thống Cửa nhận diện khuôn mặt (Facial Recognition Door).
+* Nghiên cứu các dự án mã nguồn mở hiện có và các ví dụ thực tế trong ngành để hiểu rõ các yêu cầu về phần cứng và phần mềm.
+* So sánh giữa xử lý cục bộ tại biên (local edge) và nhận diện khuôn mặt dựa trên điện toán đám mây (cloud-based) để chốt tập công nghệ (technical stack).
+
+### Các nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2   | - Thảo luận ý tưởng dự án và các tính năng cốt lõi (ví dụ: phát trực tiếp video, cơ chế mở khóa tự động, hệ thống quản lý người dùng) | 06/01/2026 | 06/01/2026      |
+| 3   | - Nghiên cứu các dự án cửa nhận diện khuôn mặt hiện có <br> - Tham khảo các ví dụ mã nguồn mở sử dụng ESP32, ESP32-CAM và SERVO SG90 | 06/02/2026 | 06/02/2026      | <https://maker.pro/arduino/projects/> <br> <https://www.meegle.com/en_us/topics/face-recognition/> |
+| 4   | - Phân tích và so sánh các framework nhận diện khuôn mặt: <br>&emsp; + Các framework cục bộ (OpenCV, Dlib, thư viện Python Face_Recognition) <br>&emsp; + Các Cloud API (AWS Rekognition, Azure Face API) | 06/03/2026 | 06/03/2026      | <https://aws.amazon.com/rekognition/> <br> <https://opencv.org/> |
+| 5   | - Chốt lựa chọn phần cứng: Chọn các vi điều khiển cụ thể (ESP32-CAM + ESP32) và động cơ servo (SG90) <br> - Phác thảo sơ đồ nguyên lý mạch lý thuyết chi tiết về phân phối nguồn điện (nguồn 5V ngoài) và nối đất chung (common ground) | 06/04/2026 | 06/04/2026      | Sơ đồ chân linh kiện (Component pinout diagrams) |
+| 6   | - **Chuẩn bị môi trường:** <br>&emsp; + Cài đặt Arduino IDE và cấu hình ESP32 Board Manager <br>&emsp; + Tải các thư viện cần thiết (ESP32Servo, trình điều khiển camera) <br>&emsp; + Phân tích cấu trúc mã nguồn mẫu chính thức (CameraWebServer) | 06/05/2026 | 06/05/2026      | <https://docs.espressif.com/> |
 
 
-### Mục tiêu tuần 1:
+### Kết quả đạt được trong Tuần 1:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu rõ luồng vận hành cốt lõi của hệ thống Cửa nhận diện khuôn mặt: 
+  * Chụp ảnh qua ESP32-CAM
+  * Xác thực khuôn mặt trực tiếp trên bo mạch (Xử lý Edge AI)
+  * Truyền tín hiệu đến ESP32
+  * Động cơ Servo SG90 xoay chốt để mở cửa
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Hoàn thành phân tích so sánh giữa các Cloud API (AWS Rekognition) và các framework xử lý cục bộ tại biên để lựa chọn mô hình xử lý ngoại tuyến (offline) hoàn toàn với độ trễ thấp.
 
+* Chốt danh mục vật tư kỹ thuật (BOM) mà chưa cần mua sắm thực tế, chuẩn bị danh sách các linh kiện cụ thể cần thiết.
 
-### Kết quả đạt được tuần 1:
+* Phác thảo sơ đồ mạch lý thuyết toàn diện nhằm giải quyết các giới hạn về nguồn điện phần cứng, bao gồm:
+  * Cấu hình chân cắm (pinout) của ESP32-CAM
+  * Đường cấp nguồn 5V riêng biệt từ bên ngoài cho động cơ servo
+  * Nối đất chung (common ground) để tránh nhiễu tín hiệu
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Cài đặt và chuẩn bị môi trường phát triển phần mềm trên máy tính, bao gồm:
+  * Thiết lập ứng dụng Arduino IDE
+  * Cài đặt Espressif ESP32 Board Manager
+  * Cài đặt sẵn thư viện ESP32Servo
+  * Tải các thư viện phụ thuộc của trình điều khiển camera
 
 

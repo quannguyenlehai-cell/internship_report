@@ -6,120 +6,123 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo Tổng kết: “Kiến trúc Đám mây, Đổi mới AI và Vận hành Hạ tầng”
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Mục tiêu Sự kiện
 
-### Mục Đích Của Sự Kiện
+- Khám phá backend đám mây thời gian thực cho game engine.
+- Giới thiệu kiến trúc GraphRAG phục vụ truy xuất dữ liệu đa chặng (multi-hop).
+- Cung cấp lộ trình phát triển sự nghiệp từ IT helpdesk lên DevOps.
+- Trình bày giải pháp học máy cho việc phát hiện xâm nhập mạng.
+- Đi sâu vào cơ chế container và tối ưu hóa Dockerfile.
+- Khái quát các khung làm việc (framework) để hợp tác nhóm kỹ thuật hiệu quả.
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Diễn giả
 
-### Danh Sách Diễn Giả
+- **Nguyễn Quốc Bảo** – Cloud & Game Backend Developer
+- **Việt Phát** – AI Major, Swinburne University of Technology
+- **Trần Trung Vinh** – System Administrator, Central Retail Group
+- **Lê Hoàng Gia Đại** – AWS G3 Team, HUTECH University
+- **Bảo Huỳnh** – Junior Cloud Native Developer, Endava Vietnam
+- **Trương Huy Phước** – Team Collaboration Specialist
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+### Điểm nổi bật Chính
 
-### Nội Dung Nổi Bật
+#### Kiến trúc Nhiều người chơi trên Đám mây
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+- **Định tuyến Stateful:** Sử dụng AWS API Gateway WebSockets và route keys cho lưu lượng JSON thời gian thực.  
+- **Backend Serverless:** Node.js 20 Lambda xử lý payload; DynamoDB theo dõi connection ID của người chơi.  
+- **Lựa chọn Giao thức:** UDP cho tính toán vật lý độ trễ thấp; WebSockets cho trạng thái phiên; HTTP cho hồ sơ người dùng.  
+- **Tích hợp phía Client:** Triển khai qua Godot 4 WebSocketPeer và xử lý bên trong vòng lặp native _process.  
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### Kiến trúc GraphRAG Nâng cao
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+- **Đánh chỉ mục Đồ thị:** Thay thế khớp vector văn bản cơ bản bằng các mô hình mối quan hệ cấu trúc cho truy xuất đa chặng. 
+- **Quy trình Quản lý (Managed Pathway):** Sử dụng Amazon Bedrock Knowledge Bases để tạo embedding và Neptune Analytics để đánh chỉ mục. 
+- **Quy trình Tùy chỉnh (Custom Pathway):** Sử dụng LlamaIndex để xây dựng từ văn bản sang đồ thị và Amazon Neptune cho các truy vấn Cypher.    
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+#### Lộ trình Sự nghiệp Sysadmin & DevOps
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+- **Chuyển đổi Tư duy:** Chuyển từ xử lý sự cố máy tính thụ động sang tự động hóa hạ tầng chủ động và kiểm toán hệ thống.  
+- **An toàn Môi trường Thực tế:** Áp dụng quy tắc nghiêm ngặt là không bao giờ kiểm thử các thay đổi trực tiếp trên môi trường live production. 
+- **Lộ trình Phát triển:** Từng bước qua Mạng máy tính (CCNA), Linux (RHCSA), Mở rộng Đám mây, IaC (Terraform), và CI/CD tự động. 
 
-#### Domain-Driven Design (DDD)
+#### Hệ thống Phát hiện Xâm nhập Mạng (NIDS) dựa trên Học máy
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+- **Phát hiện Bất thường:** Bổ sung cho các chữ ký tường lửa tĩnh bằng mô hình ML để phát hiện các mối đe dọa Zero-Day.  
+- **Kỹ thuật Dữ liệu:** Kiểm chứng mô hình bằng bộ dữ liệu CSE-CIC-IDS2018, tinh lọc dữ liệu và Ma trận Nhầm lẫn (Confusion Matrix) của LightGBM.  
+- **Xử lý Sự cố trên Đám mây:** Truyền log từ WAF/ALB qua Kinesis Firehose tới S3, kích hoạt cảnh báo qua GuardDuty và SNS. 
 
-#### Event-Driven Architecture
+#### Cơ chế Đóng gói Container với Docker
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+- **Ảo hóa Hệ điều hành:** Các container chia sẻ kernel của máy host, giúp chúng nhẹ hơn và nhanh hơn so với Máy ảo (VM) đầy đủ.
+- **Tối ưu hóa Lớp:** Mỗi dòng trong Dockerfile sẽ tạo ra một lớp build bất biến và có thể tái sử dụng.
+- **Vô hiệu hóa Bộ nhớ tạm:** Thay đổi một chỉ thị sẽ làm mất hiệu lực bộ nhớ tạm (cache) cho bước đó và tất cả các lớp tiếp theo.
 
-#### Compute Evolution
+#### Khung làm việc cho Hoạt động Nhóm Hiệu quả
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+- **4 Quy tắc Cốt lõi:**
+  * Thiết lập mục tiêu rõ ràng
+  * Phân công công việc phù hợp với kỹ năng cá nhân
+  * Giao tiếp cởi mở
+  * Đảm bảo trách nhiệm cá nhân
+- **Công cụ Kỹ thuật số:** 
+  * Sử dụng Trello và ClickUp để theo dõi công việc
+  * Slack và Discord để lập trình viên duy trì giao tiếp liên tục  
 
-#### Amazon Q Developer
+### Bài học Cốt lõi
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+#### Tư duy Thiết kế
 
-### Những Gì Học Được
+- **Ưu tiên Nghiệp vụ:** Kiến trúc phải được dẫn dắt bởi yêu cầu kinh doanh, không phải xu hướng công nghệ.
+- **Chiến lược Giao thức:** Phối hợp các công cụ truyền thông (Sockets, HTTP, streams) phù hợp với yêu cầu cấu trúc của payload.
+- **Giảm thiểu Rủi ro:** Xây dựng các môi trường kiểm thử (staging) cô lập và vòng lặp giám sát để bảo vệ tính sẵn sàng của môi trường production.
 
-#### Tư Duy Thiết Kế
+#### Kiến trúc Kỹ thuật
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Mô hình Serverless:** Tận dụng tính toán theo sự kiện (Lambda) và cơ sở dữ liệu managed (DynamoDB) để giảm chi phí vận hành.
+- **Build Hiệu quả:** Cấu trúc Dockerfile một cách chiến lược để tối đa hóa bộ nhớ tạm của các lớp và thu nhỏ dung lượng image.  
+- **Bối cảnh Quan hệ:** Nâng cao khả năng tìm kiếm vector văn bản truyền thống bằng cách ánh xạ các liên kết dữ liệu với Cơ sở dữ liệu Đồ thị.
 
-#### Kiến Trúc Kỹ Thuật
+#### Chiến lược Hiện đại hóa
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- **Nâng cấp Kỹ năng Theo Lớp:** Nâng cao trình độ một cách hệ thống từ nền tảng hệ điều hành lên IaC tự động và phân phối container.
+- **Đồng bộ Công việc:** Sử dụng các khung làm việc Agile để ánh xạ trực tiếp các nhiệm vụ kỹ thuật cá nhân tới các mốc quan trọng của đội ngũ.
 
-#### Chiến Lược Hiện Đại Hóa
+### Ứng dụng vào Thực tế
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- **Triển khai WebSockets:** Thử nghiệm kiến trúc Serverless AWS WebSocket cho các ứng dụng yêu cầu dữ liệu thời gian thực, độ trễ thấp.  
+- **Thử nghiệm Graph RAG:** Thử nghiệm LlamaIndex và Amazon Neptune để quản lý các truy vấn bối cảnh có tính quan hệ cao.  
+- **Áp dụng IaC:** Thay thế cấu hình hệ thống thủ công bằng cách quản lý phiên bản môi trường với Terraform.  
+- **Tối ưu hóa Dockerfile:** Sắp xếp lại các chỉ thị trong Dockerfile để tận dụng bộ nhớ tạm và thu nhỏ kích thước container.  
+- **Triển khai ML NIDS:** Truyền luồng log mạng vào các pipeline ML để phát hiện các bất thường hành vi bị ẩn giấu.  
+- **Tổ chức Không gian Làm việc:** Chuẩn hóa việc theo dõi dự án và các kỳ sprint của nhóm bằng bảng ClickUp hoặc Trello. 
 
-### Ứng Dụng Vào Công Việc
+### Trải nghiệm tại Sự kiện
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+Sự kiện 1 mang đến những góc nhìn rất thực tế bao gồm mạng đám mây, AI nâng cao, bảo mật hành vi và quy trình làm việc kỹ thuật.
 
-### Trải nghiệm trong event
+#### Học hỏi từ các diễn giả giàu kinh nghiệm
+- Các chuyên gia trong ngành đã trình bày những chiến lược kiến trúc thực thi được, đã qua kiểm chứng sản xuất cho việc mở rộng đám mây và container.
+- Diễn giả chia sẻ lộ trình chuyên môn rõ ràng để chuyển dịch sang các vai trò DevOps và Sysadmin có tác động cao.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+#### Tiếp cận kỹ thuật thực tế
+- Phân tích cơ chế thiết lập socket serverless thời gian thực, hàm serverless và cơ sở dữ liệu lưu trạng thái.
+- Nghiên cứu tiền xử lý dữ liệu, kiểm chứng ma trận mô hình ML, và pipeline tự động báo cáo sự cố trên đám mây.
+- Tìm hiểu các lớp container và cơ chế cache khi runtime để hiểu rõ cách các câu lệnh ảnh hưởng đến hiệu quả build.
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+#### Tận dụng các công cụ hiện đại
+- So sánh pipeline AI quản lý vs. tùy chỉnh sử dụng đánh chỉ mục đồ thị cho các tìm kiếm bối cảnh nâng cao. 
+- Xem xét cấu hình phần mềm theo dõi dự án được thiết kế để giữ các đội ngũ agile luôn đồng bộ.
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+#### Kết nối và Thảo luận
+- Các phiên thảo luận nhấn mạnh rằng việc tài liệu hóa liên tục và ngôn ngữ chung giúp thu hẹp khoảng cách giữa đội ngũ kinh doanh và phát triển.  
 
 #### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+- Khả năng mở rộng yêu cầu việc khớp các giao thức với từng trường hợp sử dụng và tách biệt các dịch vụ bằng các thành phần serverless.
+- Độ tin cậy hệ thống dựa vào việc chuyển từ sửa chữa thủ công sang IaC tự động, tối ưu hóa lớp và giám sát ML chủ động.
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+#### Một số hình ảnh tại sự kiện
+*Thêm ảnh sự kiện của bạn vào đây*  
+
+> Nhìn chung, Sự kiện 1 mang lại sự kết hợp mạnh mẽ giữa kiến trúc kỹ thuật, các mô hình tối ưu hóa và chiến lược phát triển sự nghiệp thực tế cho các môi trường đám mây hiện đại.

@@ -5,111 +5,121 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# Smart Facial Recognition Door Access System
+## An end-to-end edge-AI door control system
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+This proposal outlines an edge-powered smart door access control system utilizing local biometric processing. By executing facial recognition directly on the ESP32-CAM AI-Thinker board and pairing it with a serverless AWS cloud stack (AWS IoT Core, Lambda, RDS, API Gateway, and Amplify), the system achieves near-instant offline door unlocking while providing centralized cloud logging and administration.
 
 ### 2. Problem Statement
 ### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+Traditional key-based, RFID, or cloud-only biometric systems face several operational hurdles:
+* Physical keys and access cards can be lost, stolen, or duplicated.
+* PIN keypads are vulnerable to shoulder surfing and credential sharing.
+* Standalone biometric hardware is often expensive, hard to update, and lacks centralized remote management.
+* Cloud-only face matching introduces latency and fails completely during internet outages.
 
 ### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+An Edge-AI Access System with cloud management:
+* On-Device Facial Recognition: The ESP32-CAM AI-Thinker module captures image frames and runs face detection and recognition models locally.
+* Instant Local Actuation: Upon successful local match, the ESP32-CAM immediately toggles a GPIO relay to unlock the door with minimal latency and 100% offline reliability.
+* Cloud Logging & Telemetry: The ESP32-CAM asynchronously publishes access logs, visitor image snapshots, and status updates to AWS IoT Core.
+* Centralized Management: An AWS Amplify web portal backed by AWS API Gateway, AWS Lambda, and AWS RDS allows administrators to remotely manage enrolled users, trigger manual overrides, and inspect audit logs.
 
 ### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+By processing facial recognition directly on the ESP32-CAM, this system guarantees zero-latency, offline access while completely eliminating recurring cloud AI fees. With hardware costs under $35 per door and a lightweight serverless backend, it reduces overall hardware and operating expenses by up to 90% compared to commercial alternatives—achieving full ROI in under two months.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+Below is the system architecture highlighting local edge processing on the ESP32-CAM AI-Thinker board paired with AWS cloud management:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
-
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![Project Diagram](/images/2-Proposal/Diagram.jpg)
 
 ### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+- **AWS IoT Core**: Receives encrypted MQTT messages containing access attempts, timestamps, user IDs, and optional snapshot images.
+- **AWS Lambda**: Serverless computing layer that processes incoming MQTT messages, formats audit events, and handles remote admin command requests.
+- **Amazon API Gateway & AWS Amplify**: Provides a responsive dashboard for administrators to:
+  + Register new users and push new face models down to the ESP32-CAM devices via MQTT device shadows.
+  + Monitor real-time access events, successful entries, and unauthorized access attempts.
+  + Execute remote manual door unlocks over secure HTTPS/WebSocket endpoints.
+- **Amazon RDS**: Stores user profile data, access permissions, timestamped event logs, and registration records.
 
 ### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+- **Edge Devices**: ESP32-CAM module running local facial recognition models, directly connected to a relay lock module for instant offline door control.
+- **Data Ingestion**: AWS IoT Core utilizing MQTTS for secure, bidirectional messaging, device shadow state management, and real-time event log routing.
+- **Data Storage**: AWS RDS storing relational user metadata, permission levels, timestamped door entry logs, and system audit trails.
+- **Data Processing**: AWS Lambda providing serverless backend execution to parse incoming IoT messages, write audit records to AWS RDS, and process administrative commands.
+- **Web Interface**: AWS Amplify hosting a responsive single-page admin dashboard for monitoring real-time logs, reviewing access attempts, and issuing remote manual door overrides.
+- **User Management**: Amazon Cognito (integrated via AWS Amplify) handling secure administrator authentication, JWT token management, and role-based access control alongside AWS API Gateway.
 
 ### 4. Technical Implementation
 **Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+This project has two parts—setting up Facial Recognition System and building the platform following 3 phases:
+- **Phase 1:** Edge Hardware & Cloud Core Setup (Weeks 1–4)
+  + Flash ESP32-CAM AI-Thinker and store initial face embeddings in local flash memory.
+  + Connect GPIO relay circuit and verify zero-latency offline lock actuation upon face match.
+  + Provision AWS IoT Core, generate device X.509 certificates, and build the MQTTS messaging pipeline.
+  + Provision AWS RDS database instances, define schemas, and write AWS Lambda functions to handle IoT telemetry logging.
+
+- **Phase 2:** Web Interface & System Integration (Weeks 5–7)
+  + Configure Amazon Cognito user pools for administrator access and role management.
+  + Build and deploy the AWS Amplify web dashboard connected to AWS API Gateway endpoints.
+  + Perform end-to-end operational testing across edge matching, relay triggering, and asynchronous cloud event logging.
+  + Conduct network disconnection tests to verify 100% offline access functionality and optimize hardware performance under low-light conditions.
+
+- **Phase 3:** Technical Report & Documentation (Weeks 8–9)
+  + Draft comprehensive technical project documentation, hardware circuit schematics, and system design diagrams.
+  + Compile test results, performance analysis metrics, and operational user guides.
+  + Finalize and deliver the technical project report.
 
 **Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+- Hardware Component Requirements: ESP32-CAM (AI-Thinker), 5V/12V Solenoid or Electromagnetic Door Lock with a 1-channel Optocoupler Relay Module, FTDI USB-to-TTL adapter (for flashing firmware), external 5V/2A power supply, and emergency override physical switch.
+- Weather Platform: ESP-IDF / Arduino IDE with face detection and recognition library, AWS IoT Core, AWS Lambda (Node.js/Python runtime), AWS RDS (PostgreSQL/MySQL), Amazon API Gateway, AWS Amplify, and Amazon Cognito, MQTTS (MQTT over TLS 1.2/1.3) using X.509 client certificates, HTTPS, and JWT-based API authorization.
 
 ### 5. Timeline & Milestones
 **Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+- Internship (Months 6-8): 2 months.
+    - Week 1-3: Study AWS and upgrade hardware.
+    - Week 4-7: Design and adjust architecture.
+    - Week 8-9: Implement, test, and report.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
-
 ### Infrastructure Costs
 - AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+    - AWS Lambda: $0.00/month.
+    - AWS RDS: $11.405/month.
+    - AWS VPC: $4.045/month
+    - Others: $0.25/month.
+    - AWS Amplify: $0.375/month.
+    - AWS EC2 - Compute: $6.69/month
+    - AWS EC2 - Other: 0.52/month
 
-Total: $0.7/month, $8.40/12 months
+Total: $23.285/month.
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+- Hardware: $17 one-time (ESP-32, ESP-32-CAM, SERVO SG90, ...).
 
 ### 7. Risk Assessment
 #### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+- Network Outages: low impact, high probability.
+- Sensor Failures: high impact, low probability.
+- Cost Overruns: medium impact, low probability.
 
 #### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+- Network: Perform all matching locally; cache access logs in flash memory and sync asynchronously when restored.
+- Sensors: Implement camera register calibration (auto-exposure) and add 5V LED fill lighting.
+- Cost: Utilize AWS Free Tier, set budget alerts at 80% threshold, and use micro RDS instances.
 
 #### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+- Network Outages: Utilize circular flash log buffers to prevent data loss during long disconnects.
+- Sensor Failures: Retain physical mechanical key bypass and web portal manual unlock override.
+- Cost Overruns: Scale down database retention periods to reduce storage costs.
 
 ### 8. Expected Outcomes
 #### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
+- Sub-500ms Latency: Local inference triggers relay instantly.
+- 100% Offline Reliability: Door operates independently of network status.
+- Resource Efficiency: Serverless backend scales dynamically, minimizing idle cloud costs.
 #### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+- Low Cost Per Node: ~$10 per lock assembly vs. expensive commercial terminals.
+- Enterprise Scalability: Single AWS Amplify dashboard manages multiple door nodes.
+- Audit Compliance: Centralized RDS logs provide reliable access history.
