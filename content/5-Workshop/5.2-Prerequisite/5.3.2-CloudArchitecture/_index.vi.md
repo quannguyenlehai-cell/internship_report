@@ -10,14 +10,14 @@ pre : " <b> 5.2.2 </b> "
 
 Truy cập AWS Lambda Console -> Configuration -> Permissions.
 
-![endpoint](../Images/permission.png)
+![endpoint](permission.png)
 
 
 Nhấp vào Role name under Execution role.
 
 Dưới Permissions policies, Nhấp Add permissions -> Create inline policy.
 
-![endpoint](../Images/policy.png)
+![endpoint](policy.png)
 
 
 Chọn JSON and paste:
@@ -38,7 +38,7 @@ Chọn JSON and paste:
 }
 
 ```
-![endpoint](../Images/json.png)
+![endpoint](json.png)
 
 Save the policy.
 
@@ -49,7 +49,7 @@ Truy cập AWS IoT Core Console and navigate to Security -> Policies. Click Crea
 
 Nhập  descriptive identifier
 
-![endpoint](../Images/name.png)
+![endpoint](name.png)
 
 
 
@@ -83,7 +83,7 @@ Chuyển sang chế độ xem JSON hoặc trình chỉnh sửa trực quan và c
 
 ```
 
-![endpoint](../Images/edit_j.png)
+![endpoint](edit_j.png)
 
 
 
