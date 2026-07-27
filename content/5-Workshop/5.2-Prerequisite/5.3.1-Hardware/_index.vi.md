@@ -10,20 +10,20 @@ Về phần cứng, nên sử dụng.
 
 **ESP32**
 
-![endpoint](Images/shopping_f.webp)
+![endpoint](../Images/shopping_f.webp)
 
 
 **ESP32-Cam**
-![endpoint](Images/shopping.webp)
+![endpoint](../Images/shopping.webp)
 
 
 **Servo SG90**
-![endpoint](Images/images.jpg)
+![endpoint](../Images/images.jpg)
 
 
 **Breadboard**
-![endpoint](Images/breadboard.jpg)
+![endpoint](../Images/breadboard.jpg)
 
 
 **Jumper wire**
-![endpoint](Images/wires.jpg)
+![endpoint](../Images/wires.jpg)
