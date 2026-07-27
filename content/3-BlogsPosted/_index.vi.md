@@ -6,17 +6,11 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}  
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+###  [Blog 1 - BÁO CÁO TỰ HỌC VỀ AWS LAMBDA DÀNH CHO NGƯỜI MỚI BẮT ĐẦU](3.1-Blog1/)
+Báo cáo thân thiện với người mới bắt đầu này nêu bật AWS Lambda như một điểm khởi đầu lý tưởng cho sinh viên tìm hiểu về điện toán đám mây, chứng minh cách mô hình không máy chủ, hướng sự kiện và thanh toán theo mili giây của nó loại bỏ việc quản lý cơ sở hạ tầng đồng thời nhấn mạnh tầm quan trọng của các dịch vụ vi mô mô-đun so với các thiết kế phụ trợ lớn, nguyên khối.
 
-Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà các bạn đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Ví dụ:
+###  [Blog 2 - TÔI ĐÃ HỌC ĐƯỢC GÌ SAU KHI TRẢI NGHIỆM AWS IOT CORE?](3.2-Blog2/)
+Tác giả chia sẻ kinh nghiệm chuyển đổi sang AWS IoT Core cho các dự án phần cứng, giải thích cách nó cách mạng hóa quá trình phát triển bằng cách sử dụng giao thức MQTT nhẹ cho các vi điều khiển công suất thấp như ESP32, tăng cường bảo mật thông qua chứng chỉ X.509 và chính sách IAM, và tích hợp liền mạch với hệ sinh thái điện toán phi máy chủ rộng lớn hơn của AWS.
 
-###  [Blog 1 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.1-Blog1/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
-
-###  [Blog 2 - ...](3.2-Blog2/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
-
-###  [Blog 3 - ...](3.3-Blog3/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+###  [Blog 3 - MÌNH ĐÃ HỌC ĐƯỢC GÌ SAU KHỊ TRẢI NGHIỆM AWS IOT CORE?](3.3-Blog3/)
+Bài blog này chia sẻ trải nghiệm tối ưu hóa hệ thống nhúng (như ESP32) nhờ AWS IoT Core, nổi bật với khả năng truyền tải dữ liệu siêu nhẹ qua giao thức MQTT, cơ chế bảo mật mTLS nghiêm ngặt bằng chứng chỉ X.509, và sự linh hoạt khi kết nối trực tiếp với các dịch vụ serverless như AWS Lambda và RDS.

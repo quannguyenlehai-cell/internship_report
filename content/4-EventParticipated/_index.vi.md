@@ -31,7 +31,7 @@ Trong quá trình thực tập, tôi đã tham gia các sự kiện dưới đâ
 ---
 
 ### [Sự kiện 3](4.3-Event3/)  
-&emsp;**Tên sự kiện:** AWS Cloud Quest: 8-Team Knockout Trivia Challenge  
+&emsp;**Tên sự kiện:** Event GameDay 8 đội tranh hùng 
 
 &emsp;**Thời gian:** 09:00, ngày 20 tháng 06 năm 2026  
 

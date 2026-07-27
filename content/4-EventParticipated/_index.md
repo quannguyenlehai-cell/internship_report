@@ -31,7 +31,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 ---
 
 ### [Event 3](4.3-Event3/)  
-&emsp;**Event Name:** AWS Cloud Quest: 8-Team Knockout Trivia Challenge  
+&emsp;**Event Name:** Event Gameday: 8 teams compete  
 
 &emsp;**Date & Time:** 09:00, June 20, 2026  
 

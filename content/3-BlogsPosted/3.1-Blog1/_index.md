@@ -5,27 +5,49 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# AWS LAMBDA SELF-STUDY REPORT FOR BEGINNERS
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+## 1. Introduction
 
-Key points to know:
+For newcomers to Cloud Computing, navigating hundreds of services alongside complex technical jargon can often feel overwhelming and daunting. However, through hands-on practice with **AWS Lambda**, the core concepts of the cloud model gradually become much more intuitive and accessible.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+---
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+## 2. Core Features of AWS Lambda
 
-...Image...
+Based on practical experience, AWS Lambda offers three key advantages that significantly streamline the application development process:
 
-...Link...
+### 2.1. Serverless Model (No Server Management)
+* **Traditional Approach vs. Lambda:** When working on capstone or major school projects, developers usually have to manually run and maintain a local server (Node.js, Python, etc.) 24/7 to listen for incoming requests.
+* **AWS Lambda Mechanism:** Users simply upload their source code to the cloud. AWS automatically handles the entire underlying infrastructure, including operating system installations, system patching, and auto-scaling during high traffic.
 
-...Guide...
+### 2.2. Event-Driven Architecture
+A Lambda function does not run continuously; instead, it only "wakes up" when triggered by an event:
+* **Common Triggers:**
+  * A new image file is uploaded to the system.
+  * A user clicks a button on a Web/App interface.
+  * New data is written or updated in a database.
+* **Execution Lifecycle:** Event occurs → Lambda executes code → Returns results → Automatically releases resources (turns off).
+
+### 2.3. Cost Optimization
+* **Pricing Model:** Charges are strictly based on the exact number of milliseconds the code actually runs.
+* **Student Project Advantage:** When the application receives no traffic, the cost is **$0**. Combined with the **AWS Free Tier**, learners can freely experiment with school projects without worrying about unexpected charges.
+
+---
+
+## 3. Practical Lessons Learned (Best Practices)
+
+| Initial Mistake | Solution & Fix |
+| :--- | :--- |
+| Packaging a large monolithic backend application into a single Lambda function, resulting in slow execution and difficult maintenance. | **Break Down Tasks (Microservices / Single Responsibility):** Split the application into smaller functions, each handling a single responsibility (e.g., 1 function for user registration, 1 function for saving data). |
+
+> **Key Takeaway:** Modularizing functionality allows the system to remain flexible, makes bug isolation significantly easier, and simplifies maintenance throughout development.
+
+---
+
+## 4. Conclusion
+
+AWS Lambda is an ideal starting point for students and cloud beginners because it eliminates the barrier of server and network infrastructure management. Users can focus solely on writing correct business logic to successfully deploy their products.
+
+[Link Facebook](https://www.facebook.com/groups/awsstudygroupfcj/)

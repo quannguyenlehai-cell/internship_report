@@ -5,27 +5,49 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# TỰ HỌC AWS LAMBDA CHO NGƯỜI MỚI BẮT ĐẦU
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+## 1. Mở đầu
 
-Các điểm chính cần nắm:
+Đối với người mới nhập môn Điện toán đám mây (Cloud Computing), việc tiếp cận hàng trăm dịch vụ cùng thuật ngữ chuyên ngành phức tạp thường gây ra cảm giác ngợp và khó khăn. Tuy nhiên, qua quá trình thực hành trực tiếp với **AWS Lambda**, các khái niệm cốt lõi của mô hình Cloud dần trở nên trực quan và dễ tiếp cận hơn.
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+---
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+## 2. Các đặc tính cốt lõi của AWS Lambda
 
-...Hình ảnh...
+Dựa trên trải nghiệm thực tế, AWS Lambda mang lại 3 ưu điểm quan trọng giúp tối ưu hóa quá trình phát triển ứng dụng:
 
-...Link...
+### 2.1. Mô hình Serverless (Không cần quản lý máy chủ)
+* **Khác biệt so với truyền thống:** Khi làm đồ án hoặc bài tập lớn, lập trình viên thường phải tự khởi chạy và duy trì server local (Node.js, Python,...) liên tục 24/7 để chờ nhận yêu cầu.
+* **Cơ chế của AWS Lambda:** Người dùng chỉ cần tải mã nguồn (code) lên đám mây. AWS sẽ tự động đảm nhận toàn bộ hạ tầng bên dưới bao gồm: cài đặt hệ điều hành, vá lỗi hệ thống và tự động mở rộng (scaling) khi tải tăng cao.
 
-...Hướng dẫn...
+### 2.2. Cơ chế thực thi theo sự kiện (Event-driven Architecture)
+Hàm Lambda không chạy liên tục mà chỉ "thức dậy" khi nhận được tín hiệu kích hoạt (Trigger):
+* **Các dạng Trigger phổ biến:**
+  * Có file ảnh mới được tải lên hệ thống.
+  * Người dùng thực hiện thao tác click trên giao diện Web/App.
+  * Dữ liệu mới được ghi hoặc cập nhật vào cơ sở dữ liệu.
+* **Chu kỳ hoạt động:** Khi có sự kiện -> Lambda kích hoạt code -> Trả về kết quả -> Tự động giải phóng tài nguyên (tắt hàm).
+
+### 2.3. Tối ưu hóa chi phí
+* **Mô hình tính phí:** Chỉ tính tiền dựa trên số mili-giây mà mã nguồn thực sự hoạt động.
+* **Tối ưu dự án sinh viên:** Khi ứng dụng không có lưu lượng truy cập, chi phí phát sinh là **0 đồng**. Kết hợp với gói **AWS Free Tier**, người học có thể thoải mái thử nghiệm đồ án mà không lo bị tính phí ngoài ý muốn.
+
+---
+
+## 3. Bài học kinh nghiệm thực tế (Best Practices)
+
+| Sai lầm ban đầu | Giải pháp & Cách khắc phục |
+| :--- | :--- |
+| Đưa toàn bộ ứng dụng Backend lớn (Monolithic) vào một hàm Lambda duy nhất, khiến code xử lý chậm và khó bảo trì. | **Chia nhỏ công việc (Microservices / Single Responsibility):** Tách ứng dụng thành các hàm nhỏ đảm nhận duy nhất một chức năng (ví dụ: 1 hàm đăng ký tài khoản, 1 hàm lưu dữ liệu). |
+
+> **Kinh nghiệm rút ra:** Việc chia nhỏ chức năng giúp hệ thống hoạt động linh hoạt, dễ khoanh vùng lỗi và bảo trì thuận tiện hơn trong quá trình phát triển.
+
+---
+
+## 4. Kết luận
+
+AWS Lambda là điểm khởi đầu lý tưởng cho sinh viên và người mới học Cloud nhờ loại bỏ rào cản về quản lý hạ tầng máy chủ và mạng. Người dùng chỉ cần tập trung vào việc viết đúng logic nghiệp vụ của mã nguồn là có thể triển khai sản phẩm thành công.
+
+[Link Facebook](https://www.facebook.com/groups/awsstudygroupfcj/)

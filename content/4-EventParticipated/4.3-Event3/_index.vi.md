@@ -5,7 +5,7 @@ weight: 1
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
-# Báo Cáo Tổng kết: "AWS Cloud Quest: 8-Team Knockout Trivia Challenge"
+# Báo Cáo Tổng kết: "Event GameDay 8 đội tranh hùng"
 
 ### Mục Tiêu Sự Kiện
 
@@ -68,6 +68,6 @@ Thể thức bảng đấu tạo ra một môi trường tương tác, nơi khá
 Khác với các bài thuyết trình slide truyền thống, bài trắc nghiệm đồng thời buộc người tham gia phải truy xuất kiến thức một cách linh hoạt và bảo vệ lập luận kỹ thuật của mình trước đồng đội chỉ trong vài giây.
 
 #### Một số hình ảnh sự kiện
-*Thêm hình ảnh sự kiện của bạn vào đây*
+![Event3](Event3.png)
 
 > Việc game hóa các khái niệm kiến trúc AWS thông qua các trận đấu loại đối đầu đồng thời đã chứng minh là một phương pháp hiệu quả để kiểm tra sự hiểu biết kỹ thuật thực sự, đồng thời xây dựng tinh thần đồng đội.

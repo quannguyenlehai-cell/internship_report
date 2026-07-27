@@ -5,27 +5,53 @@ weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# INTERNSHIP PROJECT: FACIAL RECOGNITION DOOR LOCK SYSTEM (ESP32-CAM + AWS LAMBDA)
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+An intelligent access control system combining budget-friendly AI hardware (**Edge-AI**) and Cloud infrastructure (**AWS Serverless**).
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+## 1. Where did the idea come from? (Real-world Problem)
 
-Key points to know:
+In practice, existing door locking solutions each have their own drawbacks:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+* **Physical Keys & Keycards:** Easily lost, forgotten, or duplicated without authorization.
+* **PIN Passwords:** Vulnerable to shoulder surfing or unwanted sharing.
+* **Cloud Facial Recognition Locks:** Often expensive and suffer from high latency due to uploading image data to remote servers.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+**Project Goal:** 
+Build an ultra-affordable facial recognition door unlocking system (hardware cost under **$17 / 400,000 VND**), with ultra-low latency, while enabling administrators to manage access history remotely via a Web interface.
 
-...Image...
+---
 
-...Link...
+## 2. How does this system work?
 
-...Guide...
+The architecture is divided into two main components working seamlessly together:
+
+### A. At the Door Device (ESP32-CAM)
+* All facial recognition processing is handled directly on the ESP32-CAM microcontroller (**Edge-AI**).
+* **Workflow:** Person stands in front of camera → Chip scans face → Data matches → Lock opens instantly (latency under $0.5$ seconds).
+
+### B. On the Cloud (AWS Infrastructure)
+Once the door unlocks successfully, the device sends a "report" to the cloud to log access history:
+
+* **AWS IoT Core:** Receives reported messages sent from the edge device.
+* **AWS Lambda:** Automatically triggers to process incoming data and store access logs in the database (**Amazon RDS**).
+* **AWS Amplify & API Gateway:** Provides a Web dashboard for administrators. Admins can remotely:
+  * View real-time access logs.
+  * Add/Remove users.
+  * Trigger remote door unlocking.
+
+---
+
+## 3. Key Highlights & Takeaways
+
+* **Ultra-Low Latency ($< 500\text{ms}$):** On-device Edge-AI processing triggers the door lock immediately without waiting for server responses.
+* **Ultra-Affordable Cost:** Hardware cost for one door setup (ESP32-CAM, servo motor, circuitry...) is only around **$17 (~400,000 VND)** — over 90% cheaper than commercial smart locks.
+* **Optimized Cloud Cost:** Leveraging a Serverless backend (**AWS Lambda**, **AWS IoT Core**...), the system scales automatically when used and incurs virtually zero cost when idle.
+
+---
+
+## 4. Conclusion
+
+In just 2 short months, moving from a student new to Cloud concepts, building a hands-on project combining **IoT (ESP32-CAM)** and **Serverless (AWS Lambda)** has deepened my understanding of real-world system architecture.
+
+[Link Facebook](https://www.facebook.com/groups/awsstudygroupfcj/)

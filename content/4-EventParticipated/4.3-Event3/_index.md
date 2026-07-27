@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Summary Report: "AWS Cloud Quest: 8-Team Knockout Trivia Challenge"
+# Summary Report: "Event Gameday: 8 teams compete"
 
 ### Event Objectives
 
@@ -69,6 +69,6 @@ The bracket format created an interactive environment where audience members tra
 Unlike traditional slide presentations, the simultaneous quiz forced participants to recall knowledge dynamically and defend their technical logic to teammates within seconds.
 
 #### Some event photos
-*Add your event photos here*
+![Event3](Event3.png)
 
 > Gamifying AWS architectural concepts through simultaneous head-to-head matches proved to be an effective way to test true technical comprehension while building team camaraderie.
