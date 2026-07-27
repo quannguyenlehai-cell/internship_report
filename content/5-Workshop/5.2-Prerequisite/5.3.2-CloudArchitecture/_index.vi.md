@@ -83,7 +83,7 @@ Chuyển sang chế độ xem JSON hoặc trình chỉnh sửa trực quan và c
 
 ```
 
-![endpoint](../Images/edit_j.png)
+![endpoint](content/5-Workshop/5.2-Prerequisite/Images/edit_j.png)
 
 
 
