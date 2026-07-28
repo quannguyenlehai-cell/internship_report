@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 8. </b> "
 ---
 ### 1. Video Demo
-<iframe src="https://drive.google.com/file/d/1zJK1xsgbdD0uGqovlookPtAyN7bwks7r/preview" width="640" height="480"></iframe>
+<iframe src="https://drive.google.com/file/d/1zJK1xsgbdD0uGqovlookPtAyN7bwks7r/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ### 2. Source code
 [](https://github.com/quannguyenlehai-cell/intership.git/)
