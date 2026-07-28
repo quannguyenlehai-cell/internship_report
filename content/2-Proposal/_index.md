@@ -23,8 +23,8 @@ Traditional key-based, RFID, or cloud-only biometric systems face several operat
 ### The Solution
 An Edge-AI Access System with cloud management:
 * On-Device Facial Recognition: The ESP32-CAM AI-Thinker module captures image frames and runs face detection and recognition models locally.
-* Instant Local Actuation: Upon successful local match, the ESP32 immediately toggles a GPIO relay to unlock the door with minimal latency and 100% offline reliability.
 * Cloud Logging & Telemetry: The AWS Lambda asynchronously publishes access logs, visitor image snapshots, and status updates to AWS IoT Core.
+* Instant Local Actuation: Upon successful local match, the ESP32 immediately toggles a GPIO relay to unlock the door with minimal latency and 100% offline reliability.
 * Centralized Management: An AWS Amplify web portal backed by AWS API Gateway, AWS Lambda, and AWS RDS allows administrators to remotely manage enrolled users, trigger manual overrides, and inspect audit logs.
 
 ### Benefits and Return on Investment
