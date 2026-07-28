@@ -22,8 +22,8 @@ Các hệ thống kiểm soát sinh trắc học truyền thống sử dụng ch
 ### Giải pháp
 Hệ thống kiểm soát cửa Edge-AI kết hợp quản lý đám mây:
 * Bo mạch ESP32-CAM AI-Thinker chụp hình ảnh và chạy các mô hình phát hiện, nhận diện khuôn mặt trực tiếp tại chỗ.
-* Khi xác thực khuôn mặt thành công, ESP32-CAM lập tức kích hoạt rơ-le GPIO để mở khóa cửa với độ trễ tối thiểu và đảm bảo độ tin cậy 100% khi ngoại tuyến.
-* ESP32-CAM gửi bất đồng bộ nhật ký truy cập, ảnh chụp khách truy cập và cập nhật trạng thái lên AWS IoT Core.
+* Khi xác thực khuôn mặt thành công, ESP32 lập tức kích hoạt rơ-le GPIO để mở khóa cửa với độ trễ tối thiểu và đảm bảo độ tin cậy 100% khi ngoại tuyến.
+* AWS Lambda gửi bất đồng bộ nhật ký truy cập, ảnh chụp khách truy cập và cập nhật trạng thái lên AWS IoT Core.
 * Cổng thông tin web AWS Amplify được hỗ trợ bởi AWS API Gateway, AWS Lambda và AWS RDS cho phép quản trị viên quản lý người dùng từ xa, kích hoạt mở cửa thủ công và kiểm tra nhật ký hệ thống.
 
 ### Lợi ích và Tỷ suất hoàn vốn (ROI)
