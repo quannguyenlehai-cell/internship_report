@@ -15,10 +15,10 @@ pre: " <b> 1.6. </b> "
 | Day | Task Description | Start Date | Completion Date | Reference Material |
 | :--- | :--- | :---: | :---: | :--- |
 | 2 | Debug and stabilize the local Node.js backend integration with the AWS IoT Core MQTT broker. | 06/07/2026 | 06/07/2026 | [Backend Server Script](https://github.com/quannguyenlehai-cell/intership/blob/main/server/index.mjs) |
-|  3 | Provision the MySQL database environment and implement core data-access logic inside AWS Lambda functions. | 07/07/2026 | 07/07/2026 | Internal Source |
-|  4 | Configure routing, deployment stages, and trigger integrations for AWS Lambda via AWS API Gateway. | 08/07/2026 | 08/07/2026 | Internal Source |
-| 5 | Troubleshoot and resolve full-stack networking, routing, and access control exceptions between frontend and backend tiers. | 09/07/2026 | 09/07/2026 | Internal Source |
-| 6 | Structure HTTP method requests/responses and configure Cross-Origin Resource Sharing (CORS) policies for secure frontend access. | 10/07/2026 | 10/07/2026 | Internal Source |
+|  3 | Provision the MySQL database environment and implement core data-access logic inside AWS Lambda functions. | 07/07/2026 | 07/07/2026 ||
+|  4 | Configure routing, deployment stages, and trigger integrations for AWS Lambda via AWS API Gateway. | 08/07/2026 | 08/07/2026 ||
+| 5 | Troubleshoot and resolve full-stack networking, routing, and access control exceptions between frontend and backend tiers. | 09/07/2026 | 09/07/2026 ||
+| 6 | Structure HTTP method requests/responses and configure Cross-Origin Resource Sharing (CORS) policies for secure frontend access. | 10/07/2026 | 10/07/2026 ||
 
 ---
 

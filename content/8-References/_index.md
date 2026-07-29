@@ -5,25 +5,24 @@ weight: 8
 chapter: false
 pre: " <b> 8. </b> "
 ---
-### 1. Video Demo
+### Video Demo
 <iframe src="https://drive.google.com/file/d/1zJK1xsgbdD0uGqovlookPtAyN7bwks7r/preview" width="640" height="480" allow="autoplay"></iframe>
 
-### 2. Source code
+### Source code
 
 [Source code](https://github.com/quannguyenlehai-cell/intership.git/)
 
-### 3. AWS IOT Core
+### Reference
 
-[AWS IOT Core](https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html)
-
-### 4. AWS Lambda 
-
-[AWS Lambda](https://docs.aws.amazon.com/lambda/)
-
-### 5. AWS Amplify
-
-[AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)
-
-### 6. AWS RDS
-
-[AWS RDS](https://docs.aws.amazon.com/rds/)
+1. **AWS CLI Setup Guide:** [https://000011.awsstudygroup.com/vi/3-installcli/](https://000011.awsstudygroup.com/vi/3-installcli/)
+2. **AWS Free Tier:** [https://aws.amazon.com/free/](https://aws.amazon.com/free/)
+3. **Amazon Rekognition:** [https://aws.amazon.com/rekognition/](https://aws.amazon.com/rekognition/)
+4. **AWS IoT Core:** [https://aws.amazon.com/vi/iot-core/](https://aws.amazon.com/vi/iot-core/)
+5. **Espressif Documentation:** [https://docs.espressif.com/](https://docs.espressif.com/)
+6. **CameraWebServer firmware file:** [https://github.com/quannguyenlehai-cell/intership/blob/main/IoT/CameraWebServer/CameraWebServer.ino](https://github.com/quannguyenlehai-cell/intership/blob/main/IoT/CameraWebServer/CameraWebServer.ino)
+7. **Node.js backend server script:** [https://github.com/quannguyenlehai-cell/intership/blob/main/server/index.mjs](https://github.com/quannguyenlehai-cell/intership/blob/main/server/index.mjs)
+8. **CameraWebServer repository:** [https://github.com/quannguyenlehai-cell/intership/tree/main/IoT/CameraWebServer](https://github.com/quannguyenlehai-cell/intership/tree/main/IoT/CameraWebServer)
+9. **ESP32 servo-control sketch:** [https://github.com/quannguyenlehai-cell/intership/tree/main/IoT/sketch_jun9b](https://github.com/quannguyenlehai-cell/intership/tree/main/IoT/sketch_jun9b)
+10. **Maker Pro Arduino projects:** [https://maker.pro/arduino/projects/](https://maker.pro/arduino/projects/)
+11. **OpenCV:** [https://opencv.org/](https://opencv.org/)
+12. **Face-recognition overview by Meegle:** [https://www.meegle.com/en_us/topics/face-recognition/](https://www.meegle.com/en_us/topics/face-recognition/)

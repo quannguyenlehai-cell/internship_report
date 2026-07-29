@@ -15,10 +15,10 @@ pre: " <b> 1.7. </b> "
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Fine-tune CSS layouts and fix flexbox centering on login.html, register_admin.html, and the dashboard     | 07/13/2026 | 07/13/2026      | CSS Flexbox & Grid Guide |
-| 3-4   | - Password Hashing Integration: <br>&emsp; + Update the Python backend with PBKDF2-HMAC-SHA256 password hashing modules <br>&emsp; + Implement regex-based strength validation rules forcing complex character requirements on administrative sign-ups                                             | 07/14/2026 | 07/15/2026      | Python Hashlib Documentation |
-| 5   | - Set up sessionStorage tracking via YOLO_ADMIN_SECURE_TOKEN_2026 <br> - Code auto-logout scripts to wipe tokens if idle or when the browser window exits                          | 07/16/2026 | 07/16/2026      | JavaScript Web Storage APIs |
-| 6   | - Build password input visibility toggles (eye-icon text switches) <br> - Fix layout shifting bugs caused by dynamic DOM modifications            | 07/17/2026 | 07/17/2026      | DOM Element Properties |
+| 2   | - Fine-tune CSS layouts and fix flexbox centering on login.html, register_admin.html, and the dashboard     | 07/13/2026 | 07/13/2026      |  |
+| 3-4   | - Password Hashing Integration: <br>&emsp; + Update the Python backend with PBKDF2-HMAC-SHA256 password hashing modules <br>&emsp; + Implement regex-based strength validation rules forcing complex character requirements on administrative sign-ups                                             | 07/14/2026 | 07/15/2026      | |
+| 5   | - Set up sessionStorage tracking via YOLO_ADMIN_SECURE_TOKEN_2026 <br> - Code auto-logout scripts to wipe tokens if idle or when the browser window exits                          | 07/16/2026 | 07/16/2026      |  |
+| 6   | - Build password input visibility toggles (eye-icon text switches) <br> - Fix layout shifting bugs caused by dynamic DOM modifications            | 07/17/2026 | 07/17/2026      |  |
 
 
 ### Week 7 Achievements:

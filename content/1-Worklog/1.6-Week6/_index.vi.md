@@ -14,10 +14,10 @@ pre: " <b> 1.6. </b> "
 | Ngày | Mô tả công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
 | :--- | :--- | :---: | :---: | :--- |
 | 2 | Sửa lỗi (debug) và ổn định kết nối backend Node.js cục bộ với MQTT broker của AWS IoT Core. | 06/07/2026 | 06/07/2026 | [Backend Server Script](https://github.com/quannguyenlehai-cell/intership/blob/main/server/index.mjs) |
-| 3 | Khởi tạo môi trường cơ sở dữ liệu MySQL và triển khai logic truy cập dữ liệu cốt lõi bên trong các hàm AWS Lambda. | 07/07/2026 | 07/07/2026 | Nguồn nội bộ |
-| 4 | Cấu hình định tuyến (routing), các giai đoạn triển khai (deployment stages) và tích hợp trình kích hoạt (trigger) cho AWS Lambda thông qua AWS API Gateway. | 08/07/2026 | 08/07/2026 | Nguồn nội bộ |
-| 5 | Khắc phục sự cố và xử lý các ngoại lệ về mạng full-stack, định tuyến và kiểm soát truy cập giữa tầng frontend và backend. | 09/07/2026 | 09/07/2026 | Nguồn nội bộ |
-| 6 | Cấu trúc các yêu cầu/phản hồi phương thức HTTP và cấu hình chính sách Chia sẻ tài nguyên giữa các nguồn gốc (CORS) để frontend truy cập an toàn. | 10/07/2026 | 10/07/2026 | Nguồn nội bộ |
+| 3 | Khởi tạo môi trường cơ sở dữ liệu MySQL và triển khai logic truy cập dữ liệu cốt lõi bên trong các hàm AWS Lambda. | 07/07/2026 | 07/07/2026 |  |
+| 4 | Cấu hình định tuyến (routing), các giai đoạn triển khai (deployment stages) và tích hợp trình kích hoạt (trigger) cho AWS Lambda thông qua AWS API Gateway. | 08/07/2026 | 08/07/2026 |  |
+| 5 | Khắc phục sự cố và xử lý các ngoại lệ về mạng full-stack, định tuyến và kiểm soát truy cập giữa tầng frontend và backend. | 09/07/2026 | 09/07/2026 |  |
+| 6 | Cấu trúc các yêu cầu/phản hồi phương thức HTTP và cấu hình chính sách Chia sẻ tài nguyên giữa các nguồn gốc (CORS) để frontend truy cập an toàn. | 10/07/2026 | 10/07/2026 |  |
 
 ---
 

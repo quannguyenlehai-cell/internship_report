@@ -15,10 +15,10 @@ pre: " <b> 1.4. </b> "
 ### Các công việc thực hiện trong tuần này:
 | Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2 | - Phác thảo khung bố cục ứng dụng bằng các biến CSS sơ bộ <br> - Soạn thảo các biểu mẫu HTML cơ bản cho login.html và register_admin.html | 06/22/2026 | 06/22/2026 | Tài liệu tham khảo Biến CSS |
-| 3 | - Liên kết các đường dẫn điều hướng cơ bản, không hạn chế trên các trang mẫu thử cục bộ để kiểm tra định tuyến người dùng | 06/23/2026 | 06/23/2026 | Hướng dẫn về Liên kết HTML |
-| 4 | - Xây dựng bảng bố cục cơ sở bên trong dashboard.html <br> - Lập trình một đoạn mã đơn giản để thêm các chuỗi văn bản thô vào thanh điều hướng nhằm kiểm tra tên người dùng | 06/24/2026 | 06/24/2026 | Thao tác DOM với JavaScript |
-| 5-6 | - **Phác thảo khung giao diện (Wireframing):** <br>&emsp; + Xây dựng các khung chứa phần tử video trống cho enroll.html <br>&emsp; + Xây dựng ranh giới bố cục cho giao diện thiết bị đầu cuối khóa công khai index.html | 06/25/2026 | 06/26/2026 | Hướng dẫn Phần tử Media trên MDN |
+| 2 | - Phác thảo khung bố cục ứng dụng bằng các biến CSS sơ bộ <br> - Soạn thảo các biểu mẫu HTML cơ bản cho login.html và register_admin.html | 06/22/2026 | 06/22/2026 |  |
+| 3 | - Liên kết các đường dẫn điều hướng cơ bản, không hạn chế trên các trang mẫu thử cục bộ để kiểm tra định tuyến người dùng | 06/23/2026 | 06/23/2026 |  |
+| 4 | - Xây dựng bảng bố cục cơ sở bên trong dashboard.html <br> - Lập trình một đoạn mã đơn giản để thêm các chuỗi văn bản thô vào thanh điều hướng nhằm kiểm tra tên người dùng | 06/24/2026 | 06/24/2026 |  |
+| 5-6 | - **Phác thảo khung giao diện (Wireframing):** <br>&emsp; + Xây dựng các khung chứa phần tử video trống cho enroll.html <br>&emsp; + Xây dựng ranh giới bố cục cho giao diện thiết bị đầu cuối khóa công khai index.html | 06/25/2026 | 06/26/2026 |  |
 
 ### Kết quả đạt được trong Tuần 4:
 

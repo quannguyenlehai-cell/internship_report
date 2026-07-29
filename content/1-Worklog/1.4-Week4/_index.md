@@ -15,10 +15,10 @@ pre: " <b> 1.4. </b> "
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2 | - Outline application layout framework using preliminary CSS variables <br> - Draft basic HTML forms for login.html and register_admin.html | 06/22/2026 | 06/22/2026 | CSS Variables Reference |
-| 3 | - Wire basic, restriction-free navigation links across local prototype pages to test user routing | 06/23/2026 | 06/23/2026 | HTML Links Guide |
-| 4 | - Construct the baseline layout table inside dashboard.html <br> - Code a simple script to append raw input strings onto the navigation bar for username testing | 06/24/2026 | 06/24/2026 | JavaScript DOM Manipulation |
-| 5-6 | - **Interface Wireframing:** <br>&emsp; + Build empty video element container frames for enroll.html <br>&emsp; + Frame out layout boundaries for the public lock terminal view index.html | 06/25/2026 | 06/26/2026 | MDN Media Element Guide |
+| 2 | - Outline application layout framework using preliminary CSS variables <br> - Draft basic HTML forms for login.html and register_admin.html | 06/22/2026 | 06/22/2026 | |
+| 3 | - Wire basic, restriction-free navigation links across local prototype pages to test user routing | 06/23/2026 | 06/23/2026 |  |
+| 4 | - Construct the baseline layout table inside dashboard.html <br> - Code a simple script to append raw input strings onto the navigation bar for username testing | 06/24/2026 | 06/24/2026 | |
+| 5-6 | - **Interface Wireframing:** <br>&emsp; + Build empty video element container frames for enroll.html <br>&emsp; + Frame out layout boundaries for the public lock terminal view index.html | 06/25/2026 | 06/26/2026 |  |
 
 ### Week 4 Achievements:
 

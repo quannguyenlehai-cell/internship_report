@@ -15,10 +15,10 @@ pre: " <b> 1.5. </b> "
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2-3 | - **Media Layout Adjustment:** <br>&emsp; + Finish basic layout work for enroll.html and index.html <br>&emsp; + Align HTML5 canvas overlay boundaries over live video stream wrappers | 06/29/2026 | 06/30/2026 | HTML Canvas API |
-| 4 | -Connect basic web form inputs to asynchronous API fetch routines without security wrappers | 07/01/2026 | 07/01/2026 | JavaScript Fetch API |
-| 5 | - Deploy Python-driven AWS Lambda engine to build database tables | 07/02/2026 | 07/02/2026 | Python PyMySQL Driver Docs |
-| 6 | - Build a 2500ms cyclical query testing loop inside index.html <br> - Test entry transfers using cleartext rows | 07/03/2026 | 07/03/2026 | AWS Lambda Action Routings |
+| 2-3 | - **Media Layout Adjustment:** <br>&emsp; + Finish basic layout work for enroll.html and index.html <br>&emsp; + Align HTML5 canvas overlay boundaries over live video stream wrappers | 06/29/2026 | 06/30/2026 |  |
+| 4 | -Connect basic web form inputs to asynchronous API fetch routines without security wrappers | 07/01/2026 | 07/01/2026 |  |
+| 5 | - Deploy Python-driven AWS Lambda engine to build database tables | 07/02/2026 | 07/02/2026 |  |
+| 6 | - Build a 2500ms cyclical query testing loop inside index.html <br> - Test entry transfers using cleartext rows | 07/03/2026 | 07/03/2026 |  |
 
 ### Week 5 Achievements:
 

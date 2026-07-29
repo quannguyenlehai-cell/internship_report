@@ -15,9 +15,9 @@ pre: " <b> 1.7. </b> "
 ### Các nhiệm vụ thực hiện trong tuần:
 | Thứ | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
 | --- | --- | --- | --- | --- |
-| 2 | - Tinh chỉnh bố cục CSS và sửa lỗi căn giữa flexbox trên login.html, register_admin.html và dashboard | 13/07/2026 | 13/07/2026 | Hướng dẫn CSS Flexbox & Grid |
-| 3-4 | - Tích hợp băm mật khẩu (Password Hashing Integration): <br>&emsp; + Cập nhật backend Python với các module băm mật khẩu PBKDF2-HMAC-SHA256 <br>&emsp; + Triển khai các quy tắc xác thực độ mạnh mật khẩu dựa trên Regex, bắt buộc yêu cầu ký tự phức tạp khi đăng ký tài khoản quản trị | 14/07/2026 | 15/07/2026 | Tài liệu Python Hashlib |
-| 5 | - Thiết lập theo dõi sessionStorage qua YOLO_ADMIN_SECURE_TOKEN_2026 <br> - Lập trình script tự động đăng xuất để xóa token khi không hoạt động hoặc khi đóng cửa sổ trình duyệt | 16/07/2026 | 16/07/2026 | Các API JavaScript Web Storage |
+| 2 | - Tinh chỉnh bố cục CSS và sửa lỗi căn giữa flexbox trên login.html, register_admin.html và dashboard | 13/07/2026 | 13/07/2026 |  |
+| 3-4 | - Tích hợp băm mật khẩu (Password Hashing Integration): <br>&emsp; + Cập nhật backend Python với các module băm mật khẩu PBKDF2-HMAC-SHA256 <br>&emsp; + Triển khai các quy tắc xác thực độ mạnh mật khẩu dựa trên Regex, bắt buộc yêu cầu ký tự phức tạp khi đăng ký tài khoản quản trị | 14/07/2026 | 15/07/2026 |  |
+| 5 | - Thiết lập theo dõi sessionStorage qua YOLO_ADMIN_SECURE_TOKEN_2026 <br> - Lập trình script tự động đăng xuất để xóa token khi không hoạt động hoặc khi đóng cửa sổ trình duyệt | 16/07/2026 | 16/07/2026 |  |
 | 6 | - Xây dựng tính năng ẩn/hiện mật khẩu (nút bật/tắt biểu tượng con mắt) <br> - Sửa lỗi dịch chuyển bố cục (layout shifting) do thay đổi DOM động | 17/07/2026 | 17/07/2026 | Thuộc tính phần tử DOM |
 
 

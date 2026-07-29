@@ -15,10 +15,10 @@ pre: " <b> 1.5. </b> "
 ### Các nhiệm vụ thực hiện trong tuần này:
 | Thứ | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2-3 | - **Điều chỉnh Bố cục Truyền thông (Media Layout):** <br>&emsp; + Hoàn thành công việc bố cục cơ bản cho enroll.html và index.html <br>&emsp; + Căn chỉnh ranh giới lớp phủ HTML5 canvas trên các khung chứa luồng video trực tiếp | 06/29/2026 | 06/30/2026 | HTML Canvas API |
-| 4 | - Kết nối các đầu vào biểu mẫu web cơ bản với các quy trình gọi API bất đồng bộ (fetch) mà không có lớp bảo mật | 07/01/2026 | 07/01/2026 | JavaScript Fetch API |
-| 5 | - Triển khai công cụ AWS Lambda chạy bằng Python để khởi tạo các bảng cơ sở dữ liệu | 07/02/2026 | 07/02/2026 | Tài liệu PyMySQL Driver cho Python |
-| 6 | - Xây dựng vòng lặp kiểm thử truy vấn chu kỳ 2500ms bên trong index.html <br> - Kiểm thử việc truyền dữ liệu nhập sử dụng các hàng văn bản thuần (cleartext) | 07/03/2026 | 07/03/2026 | Luồng định tuyến hành động AWS Lambda |
+| 2-3 | - **Điều chỉnh Bố cục Truyền thông (Media Layout):** <br>&emsp; + Hoàn thành công việc bố cục cơ bản cho enroll.html và index.html <br>&emsp; + Căn chỉnh ranh giới lớp phủ HTML5 canvas trên các khung chứa luồng video trực tiếp | 06/29/2026 | 06/30/2026 |  |
+| 4 | - Kết nối các đầu vào biểu mẫu web cơ bản với các quy trình gọi API bất đồng bộ (fetch) mà không có lớp bảo mật | 07/01/2026 | 07/01/2026 |  |
+| 5 | - Triển khai công cụ AWS Lambda chạy bằng Python để khởi tạo các bảng cơ sở dữ liệu | 07/02/2026 | 07/02/2026 |  |
+| 6 | - Xây dựng vòng lặp kiểm thử truy vấn chu kỳ 2500ms bên trong index.html <br> - Kiểm thử việc truyền dữ liệu nhập sử dụng các hàng văn bản thuần (cleartext) | 07/03/2026 | 07/03/2026 |  |
 
 ### Kết quả đạt được trong Tuần 5:
 

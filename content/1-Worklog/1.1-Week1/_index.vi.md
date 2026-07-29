@@ -18,7 +18,7 @@ pre: " <b> 1.1. </b> "
 | 2   | - Thảo luận ý tưởng dự án và các tính năng cốt lõi (ví dụ: phát trực tiếp video, cơ chế mở khóa tự động, hệ thống quản lý người dùng) | 06/01/2026 | 06/01/2026      |
 | 3   | - Nghiên cứu các dự án cửa nhận diện khuôn mặt hiện có <br> - Tham khảo các ví dụ mã nguồn mở sử dụng ESP32, ESP32-CAM và SERVO SG90 | 06/02/2026 | 06/02/2026      | <https://maker.pro/arduino/projects/> <br> <https://www.meegle.com/en_us/topics/face-recognition/> |
 | 4   | - Phân tích và so sánh các framework nhận diện khuôn mặt: <br>&emsp; + Các framework cục bộ (OpenCV, Dlib, thư viện Python Face_Recognition) <br>&emsp; + Các Cloud API (AWS Rekognition, Azure Face API) | 06/03/2026 | 06/03/2026      | <https://aws.amazon.com/rekognition/> <br> <https://opencv.org/> |
-| 5   | - Chốt lựa chọn phần cứng: Chọn các vi điều khiển cụ thể (ESP32-CAM + ESP32) và động cơ servo (SG90) <br> - Phác thảo sơ đồ nguyên lý mạch lý thuyết chi tiết về phân phối nguồn điện (nguồn 5V ngoài) và nối đất chung (common ground) | 06/04/2026 | 06/04/2026      | Sơ đồ chân linh kiện (Component pinout diagrams) |
+| 5   | - Chốt lựa chọn phần cứng: Chọn các vi điều khiển cụ thể (ESP32-CAM + ESP32) và động cơ servo (SG90) <br> - Phác thảo sơ đồ nguyên lý mạch lý thuyết chi tiết về phân phối nguồn điện (nguồn 5V ngoài) và nối đất chung (common ground) | 06/04/2026 | 06/04/2026      |  |
 | 6   | - **Chuẩn bị môi trường:** <br>&emsp; + Cài đặt Arduino IDE và cấu hình ESP32 Board Manager <br>&emsp; + Tải các thư viện cần thiết (ESP32Servo, trình điều khiển camera) <br>&emsp; + Phân tích cấu trúc mã nguồn mẫu chính thức (CameraWebServer) | 06/05/2026 | 06/05/2026      | <https://docs.espressif.com/> |
 
 
