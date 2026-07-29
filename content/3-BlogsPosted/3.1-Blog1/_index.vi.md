@@ -6,48 +6,30 @@ chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-# TỰ HỌC AWS LAMBDA CHO NGƯỜI MỚI BẮT ĐẦU
+Những gì mình học được sau 2 tháng "mò mẫm" AWS 
+Lambda 
+Là 1 sinh viên mới nhập môn Cloud được chưa đầy 2 tháng, thú thât là ban đầu mình thấy AWS khá "khoai". Hàng trăm dịch vụ với đống thuật ngữ tiếng Anh phức tạp làm mình rất ngợp. Tuy nhiên, khi bắt đầu làm bài tập với AWS Lambda, mọi thứ dần trở nên dễ hiểu hơn rất nhiều.
+Dưới đây là những bài học cơ bản nhất mình rút ra được sau vài tuần tự học.
+1. Không cần quản lý máy chủ (Serverless)
+Bình thường khi làm bài tập lớn, chúng mình hay phải chạy 1 server ở máy local và để nó chạy liên tục 24/7 để chờ ứng dụng gọi đến.
+Nhưng đối với AWS Lambda, bạn chỉ cần quăng đoạn code của mình lên cloud. AWS sẽ tự lo phần máy chủ bên dưới. Bạn không cần cài hệ điều hành, không cần lo vasloiox hệ thống hay sợ máy chủ bị quá tải.
+2. Code chỉ chạy khi có "sự kiên"(Trigger)
+Hàm Lambda không ngồi chạy vĩnh viễ. Nó chỉ "thức dậy" khi có 1 sự kiện nào đó kích hoạt:
+- Có người tải 1 flie  lên hệ thống.
+- Có  người bấm nút trên giao diện web/app.
+- Có dữ liệu được thêm vào database.
+Ngay khi sự kiện xảy ra, Lambda sẽ chạy code của bạn, trả về  kết quả rồi tự động tắt.
+3. Cực kì phù hợp với túi tiền sinh viên
+Vì lambda chỉ chạy khi có sự kiện, nên bạn chỉ trả tiền cho đúng số mili-s mà code thực sự chạy
+- nếu không ai dùng app của bạn - chi phí = 0 đồng.
+- AWS còn có gói free tier cho dùng thử miễn phí khá nhiều mỗi tháng, nên làm đồ án khá thoải mái không sợ bị trừ tiền oan.
+4. Kinh nghiệm cá nhân - đừng viết code quá tham
+Lúc mới học, sai lầm của mình là bê nguyên cả cái backend nhét hết vô 1 hàm Lambda, khiến code vừa chậm vừa khó fix.
+Sau 2 tháng, mình nhận ra nên chia nhỏ công việc:
+- 1 hàm đăng kí tài khoản
+- 1 hàm làm nhiệm vụ lưu dữ liệu 
+- ...
+Tóm lại là...
+Nếu bạn mỡi học Cloud và chỉ có thời gian ngắn để chuẩn bị. AWS Lambda là phần rất đáng để thử. Bạn không cần là chuyên gia về hạ tầng mạng hay máy chủ chỉ cần tập trung viết đúng đoạn code cần là xong— với Lehaiquan Nguyên.
 
-## 1. Mở đầu
-
-Đối với người mới nhập môn Điện toán đám mây (Cloud Computing), việc tiếp cận hàng trăm dịch vụ cùng thuật ngữ chuyên ngành phức tạp thường gây ra cảm giác ngợp và khó khăn. Tuy nhiên, qua quá trình thực hành trực tiếp với **AWS Lambda**, các khái niệm cốt lõi của mô hình Cloud dần trở nên trực quan và dễ tiếp cận hơn.
-
----
-
-## 2. Các đặc tính cốt lõi của AWS Lambda
-
-Dựa trên trải nghiệm thực tế, AWS Lambda mang lại 3 ưu điểm quan trọng giúp tối ưu hóa quá trình phát triển ứng dụng:
-
-### 2.1. Mô hình Serverless (Không cần quản lý máy chủ)
-* **Khác biệt so với truyền thống:** Khi làm đồ án hoặc bài tập lớn, lập trình viên thường phải tự khởi chạy và duy trì server local (Node.js, Python,...) liên tục 24/7 để chờ nhận yêu cầu.
-* **Cơ chế của AWS Lambda:** Người dùng chỉ cần tải mã nguồn (code) lên đám mây. AWS sẽ tự động đảm nhận toàn bộ hạ tầng bên dưới bao gồm: cài đặt hệ điều hành, vá lỗi hệ thống và tự động mở rộng (scaling) khi tải tăng cao.
-
-### 2.2. Cơ chế thực thi theo sự kiện (Event-driven Architecture)
-Hàm Lambda không chạy liên tục mà chỉ "thức dậy" khi nhận được tín hiệu kích hoạt (Trigger):
-* **Các dạng Trigger phổ biến:**
-  * Có file ảnh mới được tải lên hệ thống.
-  * Người dùng thực hiện thao tác click trên giao diện Web/App.
-  * Dữ liệu mới được ghi hoặc cập nhật vào cơ sở dữ liệu.
-* **Chu kỳ hoạt động:** Khi có sự kiện -> Lambda kích hoạt code -> Trả về kết quả -> Tự động giải phóng tài nguyên (tắt hàm).
-
-### 2.3. Tối ưu hóa chi phí
-* **Mô hình tính phí:** Chỉ tính tiền dựa trên số mili-giây mà mã nguồn thực sự hoạt động.
-* **Tối ưu dự án sinh viên:** Khi ứng dụng không có lưu lượng truy cập, chi phí phát sinh là **0 đồng**. Kết hợp với gói **AWS Free Tier**, người học có thể thoải mái thử nghiệm đồ án mà không lo bị tính phí ngoài ý muốn.
-
----
-
-## 3. Bài học kinh nghiệm thực tế (Best Practices)
-
-| Sai lầm ban đầu | Giải pháp & Cách khắc phục |
-| :--- | :--- |
-| Đưa toàn bộ ứng dụng Backend lớn (Monolithic) vào một hàm Lambda duy nhất, khiến code xử lý chậm và khó bảo trì. | **Chia nhỏ công việc (Microservices / Single Responsibility):** Tách ứng dụng thành các hàm nhỏ đảm nhận duy nhất một chức năng (ví dụ: 1 hàm đăng ký tài khoản, 1 hàm lưu dữ liệu). |
-
-> **Kinh nghiệm rút ra:** Việc chia nhỏ chức năng giúp hệ thống hoạt động linh hoạt, dễ khoanh vùng lỗi và bảo trì thuận tiện hơn trong quá trình phát triển.
-
----
-
-## 4. Kết luận
-
-AWS Lambda là điểm khởi đầu lý tưởng cho sinh viên và người mới học Cloud nhờ loại bỏ rào cản về quản lý hạ tầng máy chủ và mạng. Người dùng chỉ cần tập trung vào việc viết đúng logic nghiệp vụ của mã nguồn là có thể triển khai sản phẩm thành công.
-
-[Link Facebook](https://www.facebook.com/groups/awsstudygroupfcj/)
+[Link Bài viết](httpshttpswww.facebook.com/groups/awsstudygroupfcj/permalink/2225735151524778/?rdid=LGtwaQotLkeDI1a7#)

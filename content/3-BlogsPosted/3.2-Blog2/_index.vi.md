@@ -21,3 +21,5 @@ AWS IOT Core có khả năng kết nối không có khoảng cách với các d�
 Tóm lại. AWS IOT Core là cầu nối giữa phần cứng và hạ tầng cloud. Dù mất đôi chút thời gian để cấu hình Certificate và IAM Policy, nhưng hệ thống hoạt động mượt mà, đáng tin cậy và sẵn sàng scale up.
 
 https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html
+
+[Link bài viết](https://www.facebook.com/share/p/1BhrwMoQHS/)

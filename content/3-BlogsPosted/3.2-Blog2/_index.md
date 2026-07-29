@@ -22,4 +22,6 @@ AWS IoT Core offers seamless connectivity with serverless services. With the IoT
 In short, AWS IoT Core is the bridge between hardware and cloud infrastructure. Although it took some time to configure the Certificate and IAM Policy, the system runs smoothly, reliably, and is ready to scale up.
 
 https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html
-Gửi ý kiến phản hồi
+
+
+[Article Link](https://www.facebook.com/share/p/1BhrwMoQHS/)

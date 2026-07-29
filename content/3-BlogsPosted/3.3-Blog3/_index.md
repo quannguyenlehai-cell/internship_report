@@ -5,53 +5,38 @@ weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-# INTERNSHIP PROJECT: FACIAL RECOGNITION DOOR LOCK SYSTEM (ESP32-CAM + AWS LAMBDA)
+2-Month Internship Project: Facial Recognition Door Access Control System
 
-An intelligent access control system combining budget-friendly AI hardware (**Edge-AI**) and Cloud infrastructure (**AWS Serverless**).
+This is an intelligent access control system combining inexpensive AI hardware (Edge-AI) and cloud infrastructure (AWS Serverless).
+1. Idea
+In reality, current door locking methods all have their own drawbacks:
+- Mechanical keys & magnetic cards: Easily lost, forgotten, or copied.
 
-## 1. Where did the idea come from? (Real-world Problem)
+- PIN passwords: Easily spied on.
 
-In practice, existing door locking solutions each have their own drawbacks:
+- Cloud-based facial scanning locks: Often expensive and prone to delays.
 
-* **Physical Keys & Keycards:** Easily lost, forgotten, or duplicated without authorization.
-* **PIN Passwords:** Vulnerable to shoulder surfing or unwanted sharing.
-* **Cloud Facial Recognition Locks:** Often expensive and suffer from high latency due to uploading image data to remote servers.
+Objective: To create a super-affordable facial scanning door access control system (hardware cost less than 400,000 VND), with administrators managing access remotely via web.
 
-**Project Goal:** 
-Build an ultra-affordable facial recognition door unlocking system (hardware cost under **$17 / 400,000 VND**), with ultra-low latency, while enabling administrators to manage access history remotely via a Web interface.
+2. How the System Works
+The model is divided into two main parts:
+- At the door (ESP32-CAM)
+All facial recognition is processed directly on the ESP32-CAM chip.
+Standing in front of the camera -> Chip scans face -> Data matching -> Unlocking (latency less than 0.5 s).
 
----
+- In the cloud (AWS infrastructure)
+AWS IoT Core: receives data from the device.
+AWS Lambda: Automatically "wakes up" to receive data.
 
-## 2. How does this system work?
+AWS Amplify & API Gateway: Creates a webpage for administrators to see who has entered and exited, add new users, or remotely open and close the door.
 
-The architecture is divided into two main components working seamlessly together:
+3. Project Highlights
+Super affordable price: the hardware cost for one door unit is only about 400k VND - nearly 90% cheaper than commercial smart lock systems.
+Cloud cost optimization: Thanks to the serverless backend, the system automatically scales when users are present and incurs virtually no costs when idle.
+Ultra-low latency: AI processing at the end device enables instant activation.
+Conclusion:
+In just two months, from a student who was still unfamiliar with the concept of cloud, building a project combining IoT and Serverless has helped me understand much more about practical system knowledge.
 
-### A. At the Door Device (ESP32-CAM)
-* All facial recognition processing is handled directly on the ESP32-CAM microcontroller (**Edge-AI**).
-* **Workflow:** Person stands in front of camera → Chip scans face → Data matches → Lock opens instantly (latency under $0.5$ seconds).
+— with Lehaiquan Nguyen.
 
-### B. On the Cloud (AWS Infrastructure)
-Once the door unlocks successfully, the device sends a "report" to the cloud to log access history:
-
-* **AWS IoT Core:** Receives reported messages sent from the edge device.
-* **AWS Lambda:** Automatically triggers to process incoming data and store access logs in the database (**Amazon RDS**).
-* **AWS Amplify & API Gateway:** Provides a Web dashboard for administrators. Admins can remotely:
-  * View real-time access logs.
-  * Add/Remove users.
-  * Trigger remote door unlocking.
-
----
-
-## 3. Key Highlights & Takeaways
-
-* **Ultra-Low Latency ($< 500\text{ms}$):** On-device Edge-AI processing triggers the door lock immediately without waiting for server responses.
-* **Ultra-Affordable Cost:** Hardware cost for one door setup (ESP32-CAM, servo motor, circuitry...) is only around **$17 (~400,000 VND)** — over 90% cheaper than commercial smart locks.
-* **Optimized Cloud Cost:** Leveraging a Serverless backend (**AWS Lambda**, **AWS IoT Core**...), the system scales automatically when used and incurs virtually zero cost when idle.
-
----
-
-## 4. Conclusion
-
-In just 2 short months, moving from a student new to Cloud concepts, building a hands-on project combining **IoT (ESP32-CAM)** and **Serverless (AWS Lambda)** has deepened my understanding of real-world system architecture.
-
-[Link Facebook](https://www.facebook.com/groups/awsstudygroupfcj/)
+[Facebook Link](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2225859081512385/?rdid=edl9gIuvqI9LEabB#)
